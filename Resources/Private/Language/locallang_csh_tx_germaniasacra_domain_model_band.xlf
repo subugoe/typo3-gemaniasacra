@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2013-09-30T15:16:24Z" product-name="germaniasacra">
+		<header/>
+		<body>
+
+			<trans-unit id="nummer.description">
+				<source>nummer</source>
+			</trans-unit>
+			<trans-unit id="sortierung.description">
+				<source>sortierung</source>
+			</trans-unit>
+			<trans-unit id="titel.description">
+				<source>titel</source>
+			</trans-unit>
+			<trans-unit id="kurztitel.description">
+				<source>kurztitel</source>
+			</trans-unit>
+			<trans-unit id="bistum.description">
+				<source>bistum</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

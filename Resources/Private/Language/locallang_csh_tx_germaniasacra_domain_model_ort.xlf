@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2013-09-30T15:16:24Z" product-name="germaniasacra">
+		<header/>
+		<body>
+
+			<trans-unit id="ort.description">
+				<source>ort</source>
+			</trans-unit>
+			<trans-unit id="gemeinde.description">
+				<source>gemeinde</source>
+			</trans-unit>
+			<trans-unit id="kreis.description">
+				<source>kreis</source>
+			</trans-unit>
+			<trans-unit id="wuestung.description">
+				<source>wuestung</source>
+			</trans-unit>
+			<trans-unit id="breite.description">
+				<source>breite</source>
+			</trans-unit>
+			<trans-unit id="laenge.description">
+				<source>laenge</source>
+			</trans-unit>
+			<trans-unit id="land.description">
+				<source>land</source>
+			</trans-unit>
+			<trans-unit id="bistum.description">
+				<source>bistum</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2013-09-30T15:16:24Z" product-name="germaniasacra">
+		<header/>
+		<body>
+
+			<trans-unit id="kloster_id.description">
+				<source>klosterId</source>
+			</trans-unit>
+			<trans-unit id="kloster.description">
+				<source>kloster</source>
+			</trans-unit>
+			<trans-unit id="patrozinium.description">
+				<source>patrozinium</source>
+			</trans-unit>
+			<trans-unit id="bemerkung.description">
+				<source>bemerkung</source>
+			</trans-unit>
+			<trans-unit id="band_seite.description">
+				<source>bandSeite</source>
+			</trans-unit>
+			<trans-unit id="text_gs_band.description">
+				<source>textGsBand</source>
+			</trans-unit>
+			<trans-unit id="band.description">
+				<source>band</source>
+			</trans-unit>
+			<trans-unit id="bearbeitungsstatus.description">
+				<source>bearbeitungsstatus</source>
+			</trans-unit>
+			<trans-unit id="personallistenstatus.description">
+				<source>personallistenstatus</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

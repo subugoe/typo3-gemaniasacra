@@ -1,0 +1,39 @@
+plugin.tx_germaniasacra {
+	view {
+		templateRootPath = {$plugin.tx_germaniasacra.view.templateRootPath}
+		partialRootPath = {$plugin.tx_germaniasacra.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_germaniasacra.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_germaniasacra.persistence.storagePid}
+	}
+	features {
+		# uncomment the following line to enable the new Property Mapper.
+		# rewrittenPropertyMapper = 1
+	}
+}
+
+plugin.tx_germaniasacra._CSS_DEFAULT_STYLE (
+	textarea.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	input.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	.tx-germaniasacra table {
+		border-collapse:separate;
+		border-spacing:10px;
+	}
+
+	.tx-germaniasacra table th {
+		font-weight:bold;
+	}
+
+	.tx-germaniasacra table td {
+		vertical-align:top;
+	}
+)

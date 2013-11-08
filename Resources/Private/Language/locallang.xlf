@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2013-09-30T15:16:24Z" product-name="germaniasacra">
+		<header/>
+		<body>
+
+			<trans-unit id="tx_germaniasacra_domain_model_orden">
+				<source>Orden</source>
+			</trans-unit>
+			<trans-unit id="tx_germaniasacra_domain_model_orden.orden">
+				<source>orden</source>
+			</trans-unit>
+			<trans-unit id="tx_germaniasacra_domain_model_orden.ordo">
+				<source>ordo</source>
+			</trans-unit>
+			<trans-unit id="tx_germaniasacra_domain_model_orden.symbol">
+				<source>symbol</source>
+			</trans-unit>
+			<trans-unit id="tx_germaniasacra_domain_model_orden.graphik">
+				<source>graphik</source>
+			</trans-unit>
+			<trans-unit id="tx_germaniasacra_domain_model_orden.ordenstyp">
+				<source>ordenstyp</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_germaniasacra_domain_model_ordenstyp">
+				<source>Ordenstyp</source>
+			</trans-unit>
+			<trans-unit id="tx_germaniasacra_domain_model_ordenstyp.ordenstyp">
+				<source>ordenstyp</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_germaniasacra_domain_model_land">
+				<source>Land</source>
+			</trans-unit>
+			<trans-unit id="tx_germaniasacra_domain_model_land.land">
+				<source>land</source>
+			</trans-unit>
+			<trans-unit id="tx_germaniasacra_domain_model_land.ist_in_deutschland">
+				<source>istInDeutschland</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_germaniasacra_domain_model_ort">
+				<source>Ort</source>
+			</trans-unit>
+			<trans-unit id="tx_germaniasacra_domain_model_ort.ort">
+				<source>ort</source>
+			</trans-unit>
+			<trans-unit id="tx_germaniasacra_domain_model_ort.gemeinde">
+				<source>gemeinde</source>
+			</trans-unit>
+			<trans-unit id="tx_germaniasacra_domain_model_ort.kreis">
+				<source>kreis</source>
+			</trans-unit>
+			<trans-unit id="tx_germaniasacra_domain_model_ort.wuestung">
+				<source>wuestung</source>
+			</trans-unit>
+			<trans-unit id="tx_germaniasacra_domain_model_ort.breite">
+				<source>breite</source>
+			</trans-unit>
+			<trans-unit id="tx_germaniasacra_domain_model_ort.laenge">
+				<source>laenge</source>
+			</trans-unit>
+			<trans-unit id="tx_germaniasacra_domain_model_ort.land">
+				<source>land</source>
+			</trans-unit>
+			<trans-unit id="tx_germaniasacra_domain_model_ort.bistum">
+				<source>bistum</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_germaniasacra_domain_model_bistum">
+				<source>Bistum</source>
+			</trans-unit>
+			<trans-unit id="tx_germaniasacra_domain_model_bistum.bistum">
+				<source>bistum</source>
+			</trans-unit>
+			<trans-unit id="tx_germaniasacra_domain_model_bistum.kirchenprovinz">
+				<source>kirchenprovinz</source>
+			</trans-unit>
+			<trans-unit id="tx_germaniasacra_domain_model_bistum.bemerkung">
+				<source>bemerkung</source>
+			</trans-unit>
+			<trans-unit id="tx_germaniasacra_domain_model_bistum.ist_erzbistum">
+				<source>istErzbistum</source>
+			</trans-unit>
+			<trans-unit id="tx_germaniasacra_domain_model_bistum.shapefile">
+				<source>shapefile</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_germaniasacra_domain_model_band">
+				<source>Band</source>
+			</trans-unit>
+			<trans-unit id="tx_germaniasacra_domain_model_band.nummer">
+				<source>nummer</source>
+			</trans-unit>
+			<trans-unit id="tx_germaniasacra_domain_model_band.sortierung">
+				<source>sortierung</source>
+			</trans-unit>
+			<trans-unit id="tx_germaniasacra_domain_model_band.titel">
+				<source>titel</source>
+			</trans-unit>
+			<trans-unit id="tx_germaniasacra_domain_model_band.kurztitel">
+				<source>kurztitel</source>
+			</trans-unit>
+			<trans-unit id="tx_germaniasacra_domain_model_band.bistum">
+				<source>bistum</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_germaniasacra_domain_model_personallistenstatus">
+				<source>Personallistenstatus</source>
+			</trans-unit>
+			<trans-unit id="tx_germaniasacra_domain_model_personallistenstatus.name">
+				<source>name</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_germaniasacra_domain_model_bearbeitungsstatus">
+				<source>Bearbeitungsstatus</source>
+			</trans-unit>
+			<trans-unit id="tx_germaniasacra_domain_model_bearbeitungsstatus.name">
+				<source>name</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_germaniasacra_domain_model_kloster">
+				<source>Kloster</source>
+			</trans-unit>
+			<trans-unit id="tx_germaniasacra_domain_model_kloster.kloster_id">
+				<source>klosterId</source>
+			</trans-unit>
+			<trans-unit id="tx_germaniasacra_domain_model_kloster.kloster">
+				<source>kloster</source>
+			</trans-unit>
+			<trans-unit id="tx_germaniasacra_domain_model_kloster.patrozinium">
+				<source>patrozinium</source>
+			</trans-unit>
+			<trans-unit id="tx_germaniasacra_domain_model_kloster.bemerkung">
+				<source>bemerkung</source>
+			</trans-unit>
+			<trans-unit id="tx_germaniasacra_domain_model_kloster.band_seite">
+				<source>bandSeite</source>
+			</trans-unit>
+			<trans-unit id="tx_germaniasacra_domain_model_kloster.text_gs_band">
+				<source>textGsBand</source>
+			</trans-unit>
+			<trans-unit id="tx_germaniasacra_domain_model_kloster.band">
+				<source>band</source>
+			</trans-unit>
+			<trans-unit id="tx_germaniasacra_domain_model_kloster.bearbeitungsstatus">
+				<source>bearbeitungsstatus</source>
+			</trans-unit>
+			<trans-unit id="tx_germaniasacra_domain_model_kloster.personallistenstatus">
+				<source>personallistenstatus</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_germaniasacra_domain_model_zeitraum">
+				<source>Zeitraum</source>
+			</trans-unit>
+			<trans-unit id="tx_germaniasacra_domain_model_zeitraum.von_von">
+				<source>vonVon</source>
+			</trans-unit>
+			<trans-unit id="tx_germaniasacra_domain_model_zeitraum.von_bis">
+				<source>vonBis</source>
+			</trans-unit>
+			<trans-unit id="tx_germaniasacra_domain_model_zeitraum.von_verbal">
+				<source>vonVerbal</source>
+			</trans-unit>
+			<trans-unit id="tx_germaniasacra_domain_model_zeitraum.bis_von">
+				<source>bisVon</source>
+			</trans-unit>
+			<trans-unit id="tx_germaniasacra_domain_model_zeitraum.bis_bis">
+				<source>bisBis</source>
+			</trans-unit>
+			<trans-unit id="tx_germaniasacra_domain_model_zeitraum.bis_verbal">
+				<source>bisVerbal</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_germaniasacra_domain_model_klosterstatus">
+				<source>Klosterstatus</source>
+			</trans-unit>
+			<trans-unit id="tx_germaniasacra_domain_model_klosterstatus.status">
+				<source>status</source>
+			</trans-unit>
+			
+		</body>
+	</file>
+</xliff>

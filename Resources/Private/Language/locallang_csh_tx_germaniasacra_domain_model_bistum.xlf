@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2013-09-30T15:16:24Z" product-name="germaniasacra">
+		<header/>
+		<body>
+
+			<trans-unit id="bistum.description">
+				<source>bistum</source>
+			</trans-unit>
+			<trans-unit id="kirchenprovinz.description">
+				<source>kirchenprovinz</source>
+			</trans-unit>
+			<trans-unit id="bemerkung.description">
+				<source>bemerkung</source>
+			</trans-unit>
+			<trans-unit id="ist_erzbistum.description">
+				<source>istErzbistum</source>
+			</trans-unit>
+			<trans-unit id="shapefile.description">
+				<source>shapefile</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
