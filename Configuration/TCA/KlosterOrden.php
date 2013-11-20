@@ -3,13 +3,13 @@ if (!defined ('TYPO3_MODE')) {
 	die ('Access denied.');
 }
 
-$TCA['tx_germaniasacra_domain_model_ordenstyp'] = array(
-	'ctrl' => $TCA['tx_germaniasacra_domain_model_ordenstyp']['ctrl'],
+$TCA['tx_germaniasacra_domain_model_klosterorden'] = array(
+	'ctrl' => $TCA['tx_germaniasacra_domain_model_klosterorden']['ctrl'],
 	'interface' => array(
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, ordenstyp',
+		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, bemerkung, klosterstatus, kloster, orden, zeitraum',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, ordenstyp,--div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access,starttime, endtime'),
+		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, bemerkung, klosterstatus, kloster, orden, zeitraum,--div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access,starttime, endtime'),
 	),
 	'palettes' => array(
 		'1' => array('showitem' => ''),
@@ -37,8 +37,8 @@ $TCA['tx_germaniasacra_domain_model_ordenstyp'] = array(
 				'items' => array(
 					array('', 0),
 				),
-				'foreign_table' => 'tx_germaniasacra_domain_model_ordenstyp',
-				'foreign_table_where' => 'AND tx_germaniasacra_domain_model_ordenstyp.pid=###CURRENT_PID### AND tx_germaniasacra_domain_model_ordenstyp.sys_language_uid IN (-1,0)',
+				'foreign_table' => 'tx_germaniasacra_domain_model_klosterorden',
+				'foreign_table_where' => 'AND tx_germaniasacra_domain_model_klosterorden.pid=###CURRENT_PID### AND tx_germaniasacra_domain_model_klosterorden.sys_language_uid IN (-1,0)',
 			),
 		),
 		'l10n_diffsource' => array(
@@ -93,13 +93,53 @@ $TCA['tx_germaniasacra_domain_model_ordenstyp'] = array(
 				),
 			),
 		),
-		'ordenstyp' => array(
+		'bemerkung' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:germaniasacra/Resources/Private/Language/locallang_db.xlf:tx_germaniasacra_domain_model_ordenstyp.ordenstyp',
+			'label' => 'LLL:EXT:germaniasacra/Resources/Private/Language/locallang_db.xlf:tx_germaniasacra_domain_model_klosterorden.bemerkung',
+			'config' => array(
+				'type' => 'text',
+				'cols' => 40,
+				'rows' => 15,
+				'eval' => 'trim'
+			),
+		),
+		'klosterstatus' => array(
+			'exclude' => 0,
+			'label' => 'LLL:EXT:germaniasacra/Resources/Private/Language/locallang_db.xlf:tx_germaniasacra_domain_model_klosterorden.klosterstatus',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
 				'eval' => 'trim'
+			),
+		),
+		'kloster' => array(
+			'exclude' => 0,
+			'label' => 'LLL:EXT:germaniasacra/Resources/Private/Language/locallang_db.xlf:tx_germaniasacra_domain_model_klosterorden.kloster',
+			'config' => array(
+				'type' => 'select',
+				'foreign_table' => 'tx_germaniasacra_domain_model_kloster',
+				'minitems' => 0,
+				'maxitems' => 1,
+			),
+		),
+		'orden' => array(
+			'exclude' => 0,
+			'label' => 'LLL:EXT:germaniasacra/Resources/Private/Language/locallang_db.xlf:tx_germaniasacra_domain_model_klosterorden.orden',
+			'config' => array(
+				'type' => 'select',
+				'foreign_table' => 'tx_germaniasacra_domain_model_orden',
+				'minitems' => 0,
+				'maxitems' => 1,
+			),
+		),
+		'zeitraum' => array(
+			'exclude' => 0,
+			'label' => 'LLL:EXT:germaniasacra/Resources/Private/Language/locallang_db.xlf:tx_germaniasacra_domain_model_klosterorden.zeitraum',
+			'config' => array(
+				'type' => 'select',
+				'foreign_table' => 'tx_germaniasacra_domain_model_zeitraum',
+				'minitems' => 0,
+				'maxitems' => 1,
 			),
 		),
 	),

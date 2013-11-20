@@ -32,6 +32,9 @@ namespace Subugoe\Germaniasacra\Tests;
  * @copyright Copyright belongs to the respective authors
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
+ * @package TYPO3
+ * @subpackage Germania Sacra
+ *
  * @author Ingo Pfennigstorf <pfennigstorf@sub.uni-goettingen.de>
  */
 class BistumTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
@@ -51,17 +54,12 @@ class BistumTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 	/**
 	 * @test
 	 */
-	public function getBistumReturnsInitialValueForString() {
-		$this->assertSame(
-			NULL,
-			$this->fixture->getBistum()
-		);
-	}
+	public function getBistumReturnsInitialValueForString() { }
 
 	/**
 	 * @test
 	 */
-	public function setBistumForStringSetsBistum() {
+	public function setBistumForStringSetsBistum() { 
 		$this->fixture->setBistum('Conceived at T3CON10');
 
 		$this->assertSame(
@@ -69,20 +67,16 @@ class BistumTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 			$this->fixture->getBistum()
 		);
 	}
+	
 	/**
 	 * @test
 	 */
-	public function getKirchenprovinzReturnsInitialValueForString() {
-		$this->assertSame(
-			NULL,
-			$this->fixture->getKirchenprovinz()
-		);
-	}
+	public function getKirchenprovinzReturnsInitialValueForString() { }
 
 	/**
 	 * @test
 	 */
-	public function setKirchenprovinzForStringSetsKirchenprovinz() {
+	public function setKirchenprovinzForStringSetsKirchenprovinz() { 
 		$this->fixture->setKirchenprovinz('Conceived at T3CON10');
 
 		$this->assertSame(
@@ -90,20 +84,16 @@ class BistumTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 			$this->fixture->getKirchenprovinz()
 		);
 	}
+	
 	/**
 	 * @test
 	 */
-	public function getBemerkungReturnsInitialValueForString() {
-		$this->assertSame(
-			NULL,
-			$this->fixture->getBemerkung()
-		);
-	}
+	public function getBemerkungReturnsInitialValueForString() { }
 
 	/**
 	 * @test
 	 */
-	public function setBemerkungForStringSetsBemerkung() {
+	public function setBemerkungForStringSetsBemerkung() { 
 		$this->fixture->setBemerkung('Conceived at T3CON10');
 
 		$this->assertSame(
@@ -111,29 +101,26 @@ class BistumTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 			$this->fixture->getBemerkung()
 		);
 	}
+	
 	/**
 	 * @test
 	 */
-	public function getIstErzbistumReturnsInitialValueForOolean() {	}
+	public function getIstErzbistumReturnsInitialValueForOolean() { }
 
 	/**
 	 * @test
 	 */
-	public function setIstErzbistumForOoleanSetsIstErzbistum() {	}
+	public function setIstErzbistumForOoleanSetsIstErzbistum() { }
+	
 	/**
 	 * @test
 	 */
-	public function getShapefileReturnsInitialValueForString() {
-		$this->assertSame(
-			NULL,
-			$this->fixture->getShapefile()
-		);
-	}
+	public function getShapefileReturnsInitialValueForString() { }
 
 	/**
 	 * @test
 	 */
-	public function setShapefileForStringSetsShapefile() {
+	public function setShapefileForStringSetsShapefile() { 
 		$this->fixture->setShapefile('Conceived at T3CON10');
 
 		$this->assertSame(
@@ -141,5 +128,64 @@ class BistumTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 			$this->fixture->getShapefile()
 		);
 	}
+	
+	/**
+	 * @test
+	 */
+	public function getUrlReturnsInitialValueForUrl() { 
+		$newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
+		$this->assertEquals(
+			$newObjectStorage,
+			$this->fixture->getUrl()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setUrlForObjectStorageContainingUrlSetsUrl() { 
+		$url = new \Subugoe\Germaniasacra\Domain\Model\Url();
+		$objectStorageHoldingExactlyOneUrl = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
+		$objectStorageHoldingExactlyOneUrl->attach($url);
+		$this->fixture->setUrl($objectStorageHoldingExactlyOneUrl);
+
+		$this->assertSame(
+			$objectStorageHoldingExactlyOneUrl,
+			$this->fixture->getUrl()
+		);
+	}
+	
+	/**
+	 * @test
+	 */
+	public function addUrlToObjectStorageHoldingUrl() {
+		$url = new \Subugoe\Germaniasacra\Domain\Model\Url();
+		$objectStorageHoldingExactlyOneUrl = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
+		$objectStorageHoldingExactlyOneUrl->attach($url);
+		$this->fixture->addUrl($url);
+
+		$this->assertEquals(
+			$objectStorageHoldingExactlyOneUrl,
+			$this->fixture->getUrl()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function removeUrlFromObjectStorageHoldingUrl() {
+		$url = new \Subugoe\Germaniasacra\Domain\Model\Url();
+		$localObjectStorage = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
+		$localObjectStorage->attach($url);
+		$localObjectStorage->detach($url);
+		$this->fixture->addUrl($url);
+		$this->fixture->removeUrl($url);
+
+		$this->assertEquals(
+			$localObjectStorage,
+			$this->fixture->getUrl()
+		);
+	}
+	
 }
 ?>

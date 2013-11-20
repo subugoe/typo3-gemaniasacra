@@ -32,6 +32,9 @@ namespace Subugoe\Germaniasacra\Tests;
  * @copyright Copyright belongs to the respective authors
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
+ * @package TYPO3
+ * @subpackage Germania Sacra
+ *
  * @author Ingo Pfennigstorf <pfennigstorf@sub.uni-goettingen.de>
  */
 class ZeitraumTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
@@ -51,7 +54,7 @@ class ZeitraumTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 	/**
 	 * @test
 	 */
-	public function getVonVonReturnsInitialValueForInteger() {
+	public function getVonVonReturnsInitialValueForInteger() { 
 		$this->assertSame(
 			0,
 			$this->fixture->getVonVon()
@@ -61,7 +64,7 @@ class ZeitraumTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 	/**
 	 * @test
 	 */
-	public function setVonVonForIntegerSetsVonVon() {
+	public function setVonVonForIntegerSetsVonVon() { 
 		$this->fixture->setVonVon(12);
 
 		$this->assertSame(
@@ -69,10 +72,11 @@ class ZeitraumTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 			$this->fixture->getVonVon()
 		);
 	}
+	
 	/**
 	 * @test
 	 */
-	public function getVonBisReturnsInitialValueForInteger() {
+	public function getVonBisReturnsInitialValueForInteger() { 
 		$this->assertSame(
 			0,
 			$this->fixture->getVonBis()
@@ -82,7 +86,7 @@ class ZeitraumTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 	/**
 	 * @test
 	 */
-	public function setVonBisForIntegerSetsVonBis() {
+	public function setVonBisForIntegerSetsVonBis() { 
 		$this->fixture->setVonBis(12);
 
 		$this->assertSame(
@@ -90,20 +94,16 @@ class ZeitraumTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 			$this->fixture->getVonBis()
 		);
 	}
+	
 	/**
 	 * @test
 	 */
-	public function getVonVerbalReturnsInitialValueForString() {
-		$this->assertSame(
-			NULL,
-			$this->fixture->getVonVerbal()
-		);
-	}
+	public function getVonVerbalReturnsInitialValueForString() { }
 
 	/**
 	 * @test
 	 */
-	public function setVonVerbalForStringSetsVonVerbal() {
+	public function setVonVerbalForStringSetsVonVerbal() { 
 		$this->fixture->setVonVerbal('Conceived at T3CON10');
 
 		$this->assertSame(
@@ -111,10 +111,11 @@ class ZeitraumTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 			$this->fixture->getVonVerbal()
 		);
 	}
+	
 	/**
 	 * @test
 	 */
-	public function getBisVonReturnsInitialValueForInteger() {
+	public function getBisVonReturnsInitialValueForInteger() { 
 		$this->assertSame(
 			0,
 			$this->fixture->getBisVon()
@@ -124,7 +125,7 @@ class ZeitraumTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 	/**
 	 * @test
 	 */
-	public function setBisVonForIntegerSetsBisVon() {
+	public function setBisVonForIntegerSetsBisVon() { 
 		$this->fixture->setBisVon(12);
 
 		$this->assertSame(
@@ -132,10 +133,11 @@ class ZeitraumTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 			$this->fixture->getBisVon()
 		);
 	}
+	
 	/**
 	 * @test
 	 */
-	public function getBisBisReturnsInitialValueForInteger() {
+	public function getBisBisReturnsInitialValueForInteger() { 
 		$this->assertSame(
 			0,
 			$this->fixture->getBisBis()
@@ -145,7 +147,7 @@ class ZeitraumTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 	/**
 	 * @test
 	 */
-	public function setBisBisForIntegerSetsBisBis() {
+	public function setBisBisForIntegerSetsBisBis() { 
 		$this->fixture->setBisBis(12);
 
 		$this->assertSame(
@@ -153,20 +155,16 @@ class ZeitraumTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 			$this->fixture->getBisBis()
 		);
 	}
+	
 	/**
 	 * @test
 	 */
-	public function getBisVerbalReturnsInitialValueForString() {
-		$this->assertSame(
-			NULL,
-			$this->fixture->getBisVerbal()
-		);
-	}
+	public function getBisVerbalReturnsInitialValueForString() { }
 
 	/**
 	 * @test
 	 */
-	public function setBisVerbalForStringSetsBisVerbal() {
+	public function setBisVerbalForStringSetsBisVerbal() { 
 		$this->fixture->setBisVerbal('Conceived at T3CON10');
 
 		$this->assertSame(
@@ -174,5 +172,6 @@ class ZeitraumTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 			$this->fixture->getBisVerbal()
 		);
 	}
+	
 }
 ?>

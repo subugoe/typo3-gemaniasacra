@@ -32,32 +32,84 @@ namespace Subugoe\Germaniasacra\Domain\Model;
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
  */
-class Ordenstyp extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
+class Url extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
 	/**
-	 * ordenstyp
+	 * url
 	 *
 	 * @var \string
 	 */
-	protected $ordenstyp;
+	protected $url;
 
 	/**
-	 * Returns the ordenstyp
+	 * bemerkung
 	 *
-	 * @return \string $ordenstyp
+	 * @var \string
 	 */
-	public function getOrdenstyp() {
-		return $this->ordenstyp;
+	protected $bemerkung;
+
+	/**
+	 * typ
+	 *
+	 * @var \integer
+	 */
+	protected $typ;
+
+	/**
+	 * Returns the url
+	 *
+	 * @return \string $url
+	 */
+	public function getUrl() {
+		return $this->url;
 	}
 
 	/**
-	 * Sets the ordenstyp
+	 * Sets the url
 	 *
-	 * @param \string $ordenstyp
+	 * @param \string $url
 	 * @return void
 	 */
-	public function setOrdenstyp($ordenstyp) {
-		$this->ordenstyp = $ordenstyp;
+	public function setUrl($url) {
+		$this->url = $url;
+	}
+
+	/**
+	 * Returns the bemerkung
+	 *
+	 * @return \string $bemerkung
+	 */
+	public function getBemerkung() {
+		return $this->bemerkung;
+	}
+
+	/**
+	 * Sets the bemerkung
+	 *
+	 * @param \string $bemerkung
+	 * @return void
+	 */
+	public function setBemerkung($bemerkung) {
+		$this->bemerkung = $bemerkung;
+	}
+
+	/**
+	 * Returns the typ
+	 *
+	 * @return \integer $typ
+	 */
+	public function getTyp() {
+		return $this->typ;
+	}
+
+	/**
+	 * Sets the typ
+	 *
+	 * @param \integer $typ
+	 * @return void
+	 */
+	public function setTyp($typ) {
+		$this->typ = $typ;
 	}
 
 }

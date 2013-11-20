@@ -4,11 +4,14 @@
 		<header/>
 		<body>
 
-			<trans-unit id="land.description">
-				<source>land</source>
+			<trans-unit id="url.description">
+				<source>url</source>
 			</trans-unit>
-			<trans-unit id="ist_in_deutschland.description">
-				<source>istInDeutschland</source>
+			<trans-unit id="bemerkung.description">
+				<source>bemerkung</source>
+			</trans-unit>
+			<trans-unit id="typ.description">
+				<source>typ</source>
 			</trans-unit>
 		</body>
 	</file>

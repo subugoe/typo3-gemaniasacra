@@ -32,6 +32,9 @@ namespace Subugoe\Germaniasacra\Tests;
  * @copyright Copyright belongs to the respective authors
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
+ * @package TYPO3
+ * @subpackage Germania Sacra
+ *
  * @author Ingo Pfennigstorf <pfennigstorf@sub.uni-goettingen.de>
  */
 class BandTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
@@ -51,17 +54,12 @@ class BandTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 	/**
 	 * @test
 	 */
-	public function getNummerReturnsInitialValueForString() {
-		$this->assertSame(
-			NULL,
-			$this->fixture->getNummer()
-		);
-	}
+	public function getNummerReturnsInitialValueForString() { }
 
 	/**
 	 * @test
 	 */
-	public function setNummerForStringSetsNummer() {
+	public function setNummerForStringSetsNummer() { 
 		$this->fixture->setNummer('Conceived at T3CON10');
 
 		$this->assertSame(
@@ -69,10 +67,11 @@ class BandTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 			$this->fixture->getNummer()
 		);
 	}
+	
 	/**
 	 * @test
 	 */
-	public function getSortierungReturnsInitialValueForInteger() {
+	public function getSortierungReturnsInitialValueForInteger() { 
 		$this->assertSame(
 			0,
 			$this->fixture->getSortierung()
@@ -82,7 +81,7 @@ class BandTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 	/**
 	 * @test
 	 */
-	public function setSortierungForIntegerSetsSortierung() {
+	public function setSortierungForIntegerSetsSortierung() { 
 		$this->fixture->setSortierung(12);
 
 		$this->assertSame(
@@ -90,20 +89,16 @@ class BandTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 			$this->fixture->getSortierung()
 		);
 	}
+	
 	/**
 	 * @test
 	 */
-	public function getTitelReturnsInitialValueForString() {
-		$this->assertSame(
-			NULL,
-			$this->fixture->getTitel()
-		);
-	}
+	public function getTitelReturnsInitialValueForString() { }
 
 	/**
 	 * @test
 	 */
-	public function setTitelForStringSetsTitel() {
+	public function setTitelForStringSetsTitel() { 
 		$this->fixture->setTitel('Conceived at T3CON10');
 
 		$this->assertSame(
@@ -111,20 +106,16 @@ class BandTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 			$this->fixture->getTitel()
 		);
 	}
+	
 	/**
 	 * @test
 	 */
-	public function getKurztitelReturnsInitialValueForString() {
-		$this->assertSame(
-			NULL,
-			$this->fixture->getKurztitel()
-		);
-	}
+	public function getKurztitelReturnsInitialValueForString() { }
 
 	/**
 	 * @test
 	 */
-	public function setKurztitelForStringSetsKurztitel() {
+	public function setKurztitelForStringSetsKurztitel() { 
 		$this->fixture->setKurztitel('Conceived at T3CON10');
 
 		$this->assertSame(
@@ -132,14 +123,74 @@ class BandTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 			$this->fixture->getKurztitel()
 		);
 	}
+	
 	/**
 	 * @test
 	 */
-	public function getBistumReturnsInitialValueForBistum() {	}
+	public function getBistumReturnsInitialValueForBistum() { }
 
 	/**
 	 * @test
 	 */
-	public function setBistumForBistumSetsBistum() {	}
+	public function setBistumForBistumSetsBistum() { }
+	
+	/**
+	 * @test
+	 */
+	public function getUrlReturnsInitialValueForUrl() { 
+		$newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
+		$this->assertEquals(
+			$newObjectStorage,
+			$this->fixture->getUrl()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setUrlForObjectStorageContainingUrlSetsUrl() { 
+		$url = new \Subugoe\Germaniasacra\Domain\Model\Url();
+		$objectStorageHoldingExactlyOneUrl = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
+		$objectStorageHoldingExactlyOneUrl->attach($url);
+		$this->fixture->setUrl($objectStorageHoldingExactlyOneUrl);
+
+		$this->assertSame(
+			$objectStorageHoldingExactlyOneUrl,
+			$this->fixture->getUrl()
+		);
+	}
+	
+	/**
+	 * @test
+	 */
+	public function addUrlToObjectStorageHoldingUrl() {
+		$url = new \Subugoe\Germaniasacra\Domain\Model\Url();
+		$objectStorageHoldingExactlyOneUrl = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
+		$objectStorageHoldingExactlyOneUrl->attach($url);
+		$this->fixture->addUrl($url);
+
+		$this->assertEquals(
+			$objectStorageHoldingExactlyOneUrl,
+			$this->fixture->getUrl()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function removeUrlFromObjectStorageHoldingUrl() {
+		$url = new \Subugoe\Germaniasacra\Domain\Model\Url();
+		$localObjectStorage = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
+		$localObjectStorage->attach($url);
+		$localObjectStorage->detach($url);
+		$this->fixture->addUrl($url);
+		$this->fixture->removeUrl($url);
+
+		$this->assertEquals(
+			$localObjectStorage,
+			$this->fixture->getUrl()
+		);
+	}
+	
 }
 ?>

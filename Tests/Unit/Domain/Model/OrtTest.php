@@ -32,6 +32,9 @@ namespace Subugoe\Germaniasacra\Tests;
  * @copyright Copyright belongs to the respective authors
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
+ * @package TYPO3
+ * @subpackage Germania Sacra
+ *
  * @author Ingo Pfennigstorf <pfennigstorf@sub.uni-goettingen.de>
  */
 class OrtTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
@@ -51,17 +54,12 @@ class OrtTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 	/**
 	 * @test
 	 */
-	public function getOrtReturnsInitialValueForString() {
-		$this->assertSame(
-			NULL,
-			$this->fixture->getOrt()
-		);
-	}
+	public function getOrtReturnsInitialValueForString() { }
 
 	/**
 	 * @test
 	 */
-	public function setOrtForStringSetsOrt() {
+	public function setOrtForStringSetsOrt() { 
 		$this->fixture->setOrt('Conceived at T3CON10');
 
 		$this->assertSame(
@@ -69,20 +67,16 @@ class OrtTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 			$this->fixture->getOrt()
 		);
 	}
+	
 	/**
 	 * @test
 	 */
-	public function getGemeindeReturnsInitialValueForString() {
-		$this->assertSame(
-			NULL,
-			$this->fixture->getGemeinde()
-		);
-	}
+	public function getGemeindeReturnsInitialValueForString() { }
 
 	/**
 	 * @test
 	 */
-	public function setGemeindeForStringSetsGemeinde() {
+	public function setGemeindeForStringSetsGemeinde() { 
 		$this->fixture->setGemeinde('Conceived at T3CON10');
 
 		$this->assertSame(
@@ -90,20 +84,16 @@ class OrtTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 			$this->fixture->getGemeinde()
 		);
 	}
+	
 	/**
 	 * @test
 	 */
-	public function getKreisReturnsInitialValueForString() {
-		$this->assertSame(
-			NULL,
-			$this->fixture->getKreis()
-		);
-	}
+	public function getKreisReturnsInitialValueForString() { }
 
 	/**
 	 * @test
 	 */
-	public function setKreisForStringSetsKreis() {
+	public function setKreisForStringSetsKreis() { 
 		$this->fixture->setKreis('Conceived at T3CON10');
 
 		$this->assertSame(
@@ -111,19 +101,21 @@ class OrtTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 			$this->fixture->getKreis()
 		);
 	}
+	
 	/**
 	 * @test
 	 */
-	public function getWuestungReturnsInitialValueForOolean() {	}
+	public function getWuestungReturnsInitialValueForOolean() { }
 
 	/**
 	 * @test
 	 */
-	public function setWuestungForOoleanSetsWuestung() {	}
+	public function setWuestungForOoleanSetsWuestung() { }
+	
 	/**
 	 * @test
 	 */
-	public function getBreiteReturnsInitialValueForFloat() {
+	public function getBreiteReturnsInitialValueForFloat() { 
 		$this->assertSame(
 			0.0,
 			$this->fixture->getBreite()
@@ -133,7 +125,7 @@ class OrtTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 	/**
 	 * @test
 	 */
-	public function setBreiteForFloatSetsBreite() {
+	public function setBreiteForFloatSetsBreite() { 
 		$this->fixture->setBreite(3.14159265);
 
 		$this->assertSame(
@@ -141,10 +133,11 @@ class OrtTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 			$this->fixture->getBreite()
 		);
 	}
+	
 	/**
 	 * @test
 	 */
-	public function getLaengeReturnsInitialValueForFloat() {
+	public function getLaengeReturnsInitialValueForFloat() { 
 		$this->assertSame(
 			0.0,
 			$this->fixture->getLaenge()
@@ -154,7 +147,7 @@ class OrtTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 	/**
 	 * @test
 	 */
-	public function setLaengeForFloatSetsLaenge() {
+	public function setLaengeForFloatSetsLaenge() { 
 		$this->fixture->setLaenge(3.14159265);
 
 		$this->assertSame(
@@ -162,23 +155,84 @@ class OrtTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 			$this->fixture->getLaenge()
 		);
 	}
+	
 	/**
 	 * @test
 	 */
-	public function getLandReturnsInitialValueForLand() {	}
+	public function getLandReturnsInitialValueForLand() { }
 
 	/**
 	 * @test
 	 */
-	public function setLandForLandSetsLand() {	}
+	public function setLandForLandSetsLand() { }
+	
 	/**
 	 * @test
 	 */
-	public function getBistumReturnsInitialValueForBistum() {	}
+	public function getBistumReturnsInitialValueForBistum() { }
 
 	/**
 	 * @test
 	 */
-	public function setBistumForBistumSetsBistum() {	}
+	public function setBistumForBistumSetsBistum() { }
+	
+	/**
+	 * @test
+	 */
+	public function getUrlReturnsInitialValueForUrl() { 
+		$newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
+		$this->assertEquals(
+			$newObjectStorage,
+			$this->fixture->getUrl()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setUrlForObjectStorageContainingUrlSetsUrl() { 
+		$url = new \Subugoe\Germaniasacra\Domain\Model\Url();
+		$objectStorageHoldingExactlyOneUrl = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
+		$objectStorageHoldingExactlyOneUrl->attach($url);
+		$this->fixture->setUrl($objectStorageHoldingExactlyOneUrl);
+
+		$this->assertSame(
+			$objectStorageHoldingExactlyOneUrl,
+			$this->fixture->getUrl()
+		);
+	}
+	
+	/**
+	 * @test
+	 */
+	public function addUrlToObjectStorageHoldingUrl() {
+		$url = new \Subugoe\Germaniasacra\Domain\Model\Url();
+		$objectStorageHoldingExactlyOneUrl = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
+		$objectStorageHoldingExactlyOneUrl->attach($url);
+		$this->fixture->addUrl($url);
+
+		$this->assertEquals(
+			$objectStorageHoldingExactlyOneUrl,
+			$this->fixture->getUrl()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function removeUrlFromObjectStorageHoldingUrl() {
+		$url = new \Subugoe\Germaniasacra\Domain\Model\Url();
+		$localObjectStorage = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
+		$localObjectStorage->attach($url);
+		$localObjectStorage->detach($url);
+		$this->fixture->addUrl($url);
+		$this->fixture->removeUrl($url);
+
+		$this->assertEquals(
+			$localObjectStorage,
+			$this->fixture->getUrl()
+		);
+	}
+	
 }
 ?>

@@ -26,22 +26,25 @@ namespace Subugoe\Germaniasacra\Tests;
  ***************************************************************/
 
 /**
- * Test case for class \Subugoe\Germaniasacra\Domain\Model\Personallistenstatus.
+ * Test case for class \Subugoe\Germaniasacra\Domain\Model\KlosterOrden.
  *
  * @version $Id$
  * @copyright Copyright belongs to the respective authors
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
+ * @package TYPO3
+ * @subpackage Germania Sacra
+ *
  * @author Ingo Pfennigstorf <pfennigstorf@sub.uni-goettingen.de>
  */
-class PersonallistenstatusTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
+class KlosterOrdenTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 	/**
-	 * @var \Subugoe\Germaniasacra\Domain\Model\Personallistenstatus
+	 * @var \Subugoe\Germaniasacra\Domain\Model\KlosterOrden
 	 */
 	protected $fixture;
 
 	public function setUp() {
-		$this->fixture = new \Subugoe\Germaniasacra\Domain\Model\Personallistenstatus();
+		$this->fixture = new \Subugoe\Germaniasacra\Domain\Model\KlosterOrden();
 	}
 
 	public function tearDown() {
@@ -51,23 +54,66 @@ class PersonallistenstatusTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCas
 	/**
 	 * @test
 	 */
-	public function getNameReturnsInitialValueForString() {
-		$this->assertSame(
-			NULL,
-			$this->fixture->getName()
-		);
-	}
+	public function getBemerkungReturnsInitialValueForString() { }
 
 	/**
 	 * @test
 	 */
-	public function setNameForStringSetsName() {
-		$this->fixture->setName('Conceived at T3CON10');
+	public function setBemerkungForStringSetsBemerkung() { 
+		$this->fixture->setBemerkung('Conceived at T3CON10');
 
 		$this->assertSame(
 			'Conceived at T3CON10',
-			$this->fixture->getName()
+			$this->fixture->getBemerkung()
 		);
 	}
+	
+	/**
+	 * @test
+	 */
+	public function getKlosterstatusReturnsInitialValueForString() { }
+
+	/**
+	 * @test
+	 */
+	public function setKlosterstatusForStringSetsKlosterstatus() { 
+		$this->fixture->setKlosterstatus('Conceived at T3CON10');
+
+		$this->assertSame(
+			'Conceived at T3CON10',
+			$this->fixture->getKlosterstatus()
+		);
+	}
+	
+	/**
+	 * @test
+	 */
+	public function getKlosterReturnsInitialValueForKloster() { }
+
+	/**
+	 * @test
+	 */
+	public function setKlosterForKlosterSetsKloster() { }
+	
+	/**
+	 * @test
+	 */
+	public function getOrdenReturnsInitialValueForOrden() { }
+
+	/**
+	 * @test
+	 */
+	public function setOrdenForOrdenSetsOrden() { }
+	
+	/**
+	 * @test
+	 */
+	public function getZeitraumReturnsInitialValueForZeitraum() { }
+
+	/**
+	 * @test
+	 */
+	public function setZeitraumForZeitraumSetsZeitraum() { }
+	
 }
 ?>

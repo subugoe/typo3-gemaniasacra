@@ -28,6 +28,7 @@ namespace Subugoe\Germaniasacra\Domain\Model;
 /**
  *
  *
+ * @package germaniasacra
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
  */
@@ -67,6 +68,37 @@ class Bistum extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @var \string
 	 */
 	protected $shapefile;
+
+	/**
+	 * url
+	 *
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Germaniasacra\Domain\Model\Url>
+	 */
+	protected $url;
+
+	/**
+	 * __construct
+	 *
+	 * @return Bistum
+	 */
+	public function __construct() {
+		//Do not remove the next line: It would break the functionality
+		$this->initStorageObjects();
+	}
+
+	/**
+	 * Initializes all ObjectStorage properties.
+	 *
+	 * @return void
+	 */
+	protected function initStorageObjects() {
+		/**
+		 * Do not modify this method!
+		 * It will be rewritten on each save in the extension builder
+		 * You may modify the constructor of this class instead
+		 */
+		$this->url = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+	}
 
 	/**
 	 * Returns the bistum
@@ -170,6 +202,45 @@ class Bistum extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 */
 	public function setShapefile($shapefile) {
 		$this->shapefile = $shapefile;
+	}
+
+	/**
+	 * Adds a Url
+	 *
+	 * @param \Subugoe\Germaniasacra\Domain\Model\Url $url
+	 * @return void
+	 */
+	public function addUrl(\Subugoe\Germaniasacra\Domain\Model\Url $url) {
+		$this->url->attach($url);
+	}
+
+	/**
+	 * Removes a Url
+	 *
+	 * @param \Subugoe\Germaniasacra\Domain\Model\Url $urlToRemove The Url to be removed
+	 * @return void
+	 */
+	public function removeUrl(\Subugoe\Germaniasacra\Domain\Model\Url $urlToRemove) {
+		$this->url->detach($urlToRemove);
+	}
+
+	/**
+	 * Returns the url
+	 *
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Germaniasacra\Domain\Model\Url> $url
+	 */
+	public function getUrl() {
+		return $this->url;
+	}
+
+	/**
+	 * Sets the url
+	 *
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Germaniasacra\Domain\Model\Url> $url
+	 * @return void
+	 */
+	public function setUrl(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $url) {
+		$this->url = $url;
 	}
 
 }

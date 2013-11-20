@@ -28,17 +28,11 @@ namespace Subugoe\Germaniasacra\Domain\Model;
 /**
  *
  *
+ * @package germaniasacra
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
  */
 class Kloster extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
-
-	/**
-	 * klosterId
-	 *
-	 * @var \integer
-	 */
-	protected $klosterId;
 
 	/**
 	 * kloster
@@ -46,6 +40,13 @@ class Kloster extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @var \string
 	 */
 	protected $kloster;
+
+	/**
+	 * klosterId
+	 *
+	 * @var \integer
+	 */
+	protected $klosterId;
 
 	/**
 	 * patrozinium
@@ -76,6 +77,20 @@ class Kloster extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	protected $textGsBand;
 
 	/**
+	 * bearbeitungsstatus
+	 *
+	 * @var \integer
+	 */
+	protected $bearbeitungsstatus;
+
+	/**
+	 * personallistenstatus
+	 *
+	 * @var \integer
+	 */
+	protected $personallistenstatus;
+
+	/**
 	 * band
 	 *
 	 * @var \Subugoe\Germaniasacra\Domain\Model\Band
@@ -83,36 +98,34 @@ class Kloster extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	protected $band;
 
 	/**
-	 * bearbeitungsstatus
+	 * url
 	 *
-	 * @var \Subugoe\Germaniasacra\Domain\Model\Bearbeitungsstatus
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Germaniasacra\Domain\Model\Url>
 	 */
-	protected $bearbeitungsstatus;
+	protected $url;
 
 	/**
-	 * personallistenstatus
+	 * __construct
 	 *
-	 * @var \Subugoe\Germaniasacra\Domain\Model\Personallistenstatus
+	 * @return Kloster
 	 */
-	protected $personallistenstatus;
-
-	/**
-	 * Returns the klosterId
-	 *
-	 * @return \integer $klosterId
-	 */
-	public function getKlosterId() {
-		return $this->klosterId;
+	public function __construct() {
+		//Do not remove the next line: It would break the functionality
+		$this->initStorageObjects();
 	}
 
 	/**
-	 * Sets the klosterId
+	 * Initializes all ObjectStorage properties.
 	 *
-	 * @param \integer $klosterId
 	 * @return void
 	 */
-	public function setKlosterId($klosterId) {
-		$this->klosterId = $klosterId;
+	protected function initStorageObjects() {
+		/**
+		 * Do not modify this method!
+		 * It will be rewritten on each save in the extension builder
+		 * You may modify the constructor of this class instead
+		 */
+		$this->url = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 	}
 
 	/**
@@ -132,6 +145,25 @@ class Kloster extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 */
 	public function setKloster($kloster) {
 		$this->kloster = $kloster;
+	}
+
+	/**
+	 * Returns the klosterId
+	 *
+	 * @return \integer $klosterId
+	 */
+	public function getKlosterId() {
+		return $this->klosterId;
+	}
+
+	/**
+	 * Sets the klosterId
+	 *
+	 * @param \integer $klosterId
+	 * @return void
+	 */
+	public function setKlosterId($klosterId) {
+		$this->klosterId = $klosterId;
 	}
 
 	/**
@@ -211,6 +243,44 @@ class Kloster extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
+	 * Returns the bearbeitungsstatus
+	 *
+	 * @return \integer $bearbeitungsstatus
+	 */
+	public function getBearbeitungsstatus() {
+		return $this->bearbeitungsstatus;
+	}
+
+	/**
+	 * Sets the bearbeitungsstatus
+	 *
+	 * @param \integer $bearbeitungsstatus
+	 * @return void
+	 */
+	public function setBearbeitungsstatus($bearbeitungsstatus) {
+		$this->bearbeitungsstatus = $bearbeitungsstatus;
+	}
+
+	/**
+	 * Returns the personallistenstatus
+	 *
+	 * @return \integer $personallistenstatus
+	 */
+	public function getPersonallistenstatus() {
+		return $this->personallistenstatus;
+	}
+
+	/**
+	 * Sets the personallistenstatus
+	 *
+	 * @param \integer $personallistenstatus
+	 * @return void
+	 */
+	public function setPersonallistenstatus($personallistenstatus) {
+		$this->personallistenstatus = $personallistenstatus;
+	}
+
+	/**
 	 * Returns the band
 	 *
 	 * @return \Subugoe\Germaniasacra\Domain\Model\Band $band
@@ -230,41 +300,42 @@ class Kloster extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
-	 * Returns the bearbeitungsstatus
+	 * Adds a Url
 	 *
-	 * @return \Subugoe\Germaniasacra\Domain\Model\Bearbeitungsstatus $bearbeitungsstatus
-	 */
-	public function getBearbeitungsstatus() {
-		return $this->bearbeitungsstatus;
-	}
-
-	/**
-	 * Sets the bearbeitungsstatus
-	 *
-	 * @param \Subugoe\Germaniasacra\Domain\Model\Bearbeitungsstatus $bearbeitungsstatus
+	 * @param \Subugoe\Germaniasacra\Domain\Model\Url $url
 	 * @return void
 	 */
-	public function setBearbeitungsstatus(\Subugoe\Germaniasacra\Domain\Model\Bearbeitungsstatus $bearbeitungsstatus) {
-		$this->bearbeitungsstatus = $bearbeitungsstatus;
+	public function addUrl(\Subugoe\Germaniasacra\Domain\Model\Url $url) {
+		$this->url->attach($url);
 	}
 
 	/**
-	 * Returns the personallistenstatus
+	 * Removes a Url
 	 *
-	 * @return \Subugoe\Germaniasacra\Domain\Model\Personallistenstatus $personallistenstatus
-	 */
-	public function getPersonallistenstatus() {
-		return $this->personallistenstatus;
-	}
-
-	/**
-	 * Sets the personallistenstatus
-	 *
-	 * @param \Subugoe\Germaniasacra\Domain\Model\Personallistenstatus $personallistenstatus
+	 * @param \Subugoe\Germaniasacra\Domain\Model\Url $urlToRemove The Url to be removed
 	 * @return void
 	 */
-	public function setPersonallistenstatus(\Subugoe\Germaniasacra\Domain\Model\Personallistenstatus $personallistenstatus) {
-		$this->personallistenstatus = $personallistenstatus;
+	public function removeUrl(\Subugoe\Germaniasacra\Domain\Model\Url $urlToRemove) {
+		$this->url->detach($urlToRemove);
+	}
+
+	/**
+	 * Returns the url
+	 *
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Germaniasacra\Domain\Model\Url> $url
+	 */
+	public function getUrl() {
+		return $this->url;
+	}
+
+	/**
+	 * Sets the url
+	 *
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Germaniasacra\Domain\Model\Url> $url
+	 * @return void
+	 */
+	public function setUrl(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $url) {
+		$this->url = $url;
 	}
 
 }

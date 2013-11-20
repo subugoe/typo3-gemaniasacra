@@ -32,6 +32,9 @@ namespace Subugoe\Germaniasacra\Tests;
  * @copyright Copyright belongs to the respective authors
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
+ * @package TYPO3
+ * @subpackage Germania Sacra
+ *
  * @author Ingo Pfennigstorf <pfennigstorf@sub.uni-goettingen.de>
  */
 class LandTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
@@ -51,17 +54,12 @@ class LandTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 	/**
 	 * @test
 	 */
-	public function getLandReturnsInitialValueForString() {
-		$this->assertSame(
-			NULL,
-			$this->fixture->getLand()
-		);
-	}
+	public function getLandReturnsInitialValueForString() { }
 
 	/**
 	 * @test
 	 */
-	public function setLandForStringSetsLand() {
+	public function setLandForStringSetsLand() { 
 		$this->fixture->setLand('Conceived at T3CON10');
 
 		$this->assertSame(
@@ -69,14 +67,16 @@ class LandTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 			$this->fixture->getLand()
 		);
 	}
+	
 	/**
 	 * @test
 	 */
-	public function getIstInDeutschlandReturnsInitialValueForOolean() {	}
+	public function getIstInDeutschlandReturnsInitialValueForOolean() { }
 
 	/**
 	 * @test
 	 */
-	public function setIstInDeutschlandForOoleanSetsIstInDeutschland() {	}
+	public function setIstInDeutschlandForOoleanSetsIstInDeutschland() { }
+	
 }
 ?>

@@ -32,6 +32,9 @@ namespace Subugoe\Germaniasacra\Tests;
  * @copyright Copyright belongs to the respective authors
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
+ * @package TYPO3
+ * @subpackage Germania Sacra
+ *
  * @author Ingo Pfennigstorf <pfennigstorf@sub.uni-goettingen.de>
  */
 class KlosterTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
@@ -51,7 +54,24 @@ class KlosterTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 	/**
 	 * @test
 	 */
-	public function getKlosterIdReturnsInitialValueForInteger() {
+	public function getKlosterReturnsInitialValueForString() { }
+
+	/**
+	 * @test
+	 */
+	public function setKlosterForStringSetsKloster() { 
+		$this->fixture->setKloster('Conceived at T3CON10');
+
+		$this->assertSame(
+			'Conceived at T3CON10',
+			$this->fixture->getKloster()
+		);
+	}
+	
+	/**
+	 * @test
+	 */
+	public function getKlosterIdReturnsInitialValueForInteger() { 
 		$this->assertSame(
 			0,
 			$this->fixture->getKlosterId()
@@ -61,7 +81,7 @@ class KlosterTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 	/**
 	 * @test
 	 */
-	public function setKlosterIdForIntegerSetsKlosterId() {
+	public function setKlosterIdForIntegerSetsKlosterId() { 
 		$this->fixture->setKlosterId(12);
 
 		$this->assertSame(
@@ -69,41 +89,16 @@ class KlosterTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 			$this->fixture->getKlosterId()
 		);
 	}
+	
 	/**
 	 * @test
 	 */
-	public function getKlosterReturnsInitialValueForString() {
-		$this->assertSame(
-			NULL,
-			$this->fixture->getKloster()
-		);
-	}
+	public function getPatroziniumReturnsInitialValueForString() { }
 
 	/**
 	 * @test
 	 */
-	public function setKlosterForStringSetsKloster() {
-		$this->fixture->setKloster('Conceived at T3CON10');
-
-		$this->assertSame(
-			'Conceived at T3CON10',
-			$this->fixture->getKloster()
-		);
-	}
-	/**
-	 * @test
-	 */
-	public function getPatroziniumReturnsInitialValueForString() {
-		$this->assertSame(
-			NULL,
-			$this->fixture->getPatrozinium()
-		);
-	}
-
-	/**
-	 * @test
-	 */
-	public function setPatroziniumForStringSetsPatrozinium() {
+	public function setPatroziniumForStringSetsPatrozinium() { 
 		$this->fixture->setPatrozinium('Conceived at T3CON10');
 
 		$this->assertSame(
@@ -111,20 +106,16 @@ class KlosterTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 			$this->fixture->getPatrozinium()
 		);
 	}
+	
 	/**
 	 * @test
 	 */
-	public function getBemerkungReturnsInitialValueForString() {
-		$this->assertSame(
-			NULL,
-			$this->fixture->getBemerkung()
-		);
-	}
+	public function getBemerkungReturnsInitialValueForString() { }
 
 	/**
 	 * @test
 	 */
-	public function setBemerkungForStringSetsBemerkung() {
+	public function setBemerkungForStringSetsBemerkung() { 
 		$this->fixture->setBemerkung('Conceived at T3CON10');
 
 		$this->assertSame(
@@ -132,20 +123,16 @@ class KlosterTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 			$this->fixture->getBemerkung()
 		);
 	}
+	
 	/**
 	 * @test
 	 */
-	public function getBandSeiteReturnsInitialValueForString() {
-		$this->assertSame(
-			NULL,
-			$this->fixture->getBandSeite()
-		);
-	}
+	public function getBandSeiteReturnsInitialValueForString() { }
 
 	/**
 	 * @test
 	 */
-	public function setBandSeiteForStringSetsBandSeite() {
+	public function setBandSeiteForStringSetsBandSeite() { 
 		$this->fixture->setBandSeite('Conceived at T3CON10');
 
 		$this->assertSame(
@@ -153,20 +140,16 @@ class KlosterTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 			$this->fixture->getBandSeite()
 		);
 	}
+	
 	/**
 	 * @test
 	 */
-	public function getTextGsBandReturnsInitialValueForString() {
-		$this->assertSame(
-			NULL,
-			$this->fixture->getTextGsBand()
-		);
-	}
+	public function getTextGsBandReturnsInitialValueForString() { }
 
 	/**
 	 * @test
 	 */
-	public function setTextGsBandForStringSetsTextGsBand() {
+	public function setTextGsBandForStringSetsTextGsBand() { 
 		$this->fixture->setTextGsBand('Conceived at T3CON10');
 
 		$this->assertSame(
@@ -174,32 +157,118 @@ class KlosterTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 			$this->fixture->getTextGsBand()
 		);
 	}
+	
 	/**
 	 * @test
 	 */
-	public function getBandReturnsInitialValueForBand() {	}
+	public function getBearbeitungsstatusReturnsInitialValueForInteger() { 
+		$this->assertSame(
+			0,
+			$this->fixture->getBearbeitungsstatus()
+		);
+	}
 
 	/**
 	 * @test
 	 */
-	public function setBandForBandSetsBand() {	}
+	public function setBearbeitungsstatusForIntegerSetsBearbeitungsstatus() { 
+		$this->fixture->setBearbeitungsstatus(12);
+
+		$this->assertSame(
+			12,
+			$this->fixture->getBearbeitungsstatus()
+		);
+	}
+	
 	/**
 	 * @test
 	 */
-	public function getBearbeitungsstatusReturnsInitialValueForBearbeitungsstatus() {	}
+	public function getPersonallistenstatusReturnsInitialValueForInteger() { 
+		$this->assertSame(
+			0,
+			$this->fixture->getPersonallistenstatus()
+		);
+	}
 
 	/**
 	 * @test
 	 */
-	public function setBearbeitungsstatusForBearbeitungsstatusSetsBearbeitungsstatus() {	}
+	public function setPersonallistenstatusForIntegerSetsPersonallistenstatus() { 
+		$this->fixture->setPersonallistenstatus(12);
+
+		$this->assertSame(
+			12,
+			$this->fixture->getPersonallistenstatus()
+		);
+	}
+	
 	/**
 	 * @test
 	 */
-	public function getPersonallistenstatusReturnsInitialValueForPersonallistenstatus() {	}
+	public function getBandReturnsInitialValueForBand() { }
 
 	/**
 	 * @test
 	 */
-	public function setPersonallistenstatusForPersonallistenstatusSetsPersonallistenstatus() {	}
+	public function setBandForBandSetsBand() { }
+	
+	/**
+	 * @test
+	 */
+	public function getUrlReturnsInitialValueForUrl() { 
+		$newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
+		$this->assertEquals(
+			$newObjectStorage,
+			$this->fixture->getUrl()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setUrlForObjectStorageContainingUrlSetsUrl() { 
+		$url = new \Subugoe\Germaniasacra\Domain\Model\Url();
+		$objectStorageHoldingExactlyOneUrl = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
+		$objectStorageHoldingExactlyOneUrl->attach($url);
+		$this->fixture->setUrl($objectStorageHoldingExactlyOneUrl);
+
+		$this->assertSame(
+			$objectStorageHoldingExactlyOneUrl,
+			$this->fixture->getUrl()
+		);
+	}
+	
+	/**
+	 * @test
+	 */
+	public function addUrlToObjectStorageHoldingUrl() {
+		$url = new \Subugoe\Germaniasacra\Domain\Model\Url();
+		$objectStorageHoldingExactlyOneUrl = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
+		$objectStorageHoldingExactlyOneUrl->attach($url);
+		$this->fixture->addUrl($url);
+
+		$this->assertEquals(
+			$objectStorageHoldingExactlyOneUrl,
+			$this->fixture->getUrl()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function removeUrlFromObjectStorageHoldingUrl() {
+		$url = new \Subugoe\Germaniasacra\Domain\Model\Url();
+		$localObjectStorage = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
+		$localObjectStorage->attach($url);
+		$localObjectStorage->detach($url);
+		$this->fixture->addUrl($url);
+		$this->fixture->removeUrl($url);
+
+		$this->assertEquals(
+			$localObjectStorage,
+			$this->fixture->getUrl()
+		);
+	}
+	
 }
 ?>

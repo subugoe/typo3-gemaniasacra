@@ -6,16 +6,15 @@ if (!defined ('TYPO3_MODE')) {
 $TCA['tx_germaniasacra_domain_model_kloster'] = array(
 	'ctrl' => $TCA['tx_germaniasacra_domain_model_kloster']['ctrl'],
 	'interface' => array(
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, kloster_id, kloster, patrozinium, bemerkung, band_seite, text_gs_band, band, bearbeitungsstatus, personallistenstatus',
+		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, kloster, kloster_id, patrozinium, bemerkung, band_seite, text_gs_band, bearbeitungsstatus, personallistenstatus, band, url',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, kloster_id, kloster, patrozinium, bemerkung, band_seite, text_gs_band, band, bearbeitungsstatus, personallistenstatus,--div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access,starttime, endtime'),
+		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, kloster, kloster_id, patrozinium, bemerkung, band_seite, text_gs_band, bearbeitungsstatus, personallistenstatus, band, url,--div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access,starttime, endtime'),
 	),
 	'palettes' => array(
 		'1' => array('showitem' => ''),
 	),
 	'columns' => array(
-	
 		'sys_language_uid' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.language',
@@ -47,7 +46,6 @@ $TCA['tx_germaniasacra_domain_model_kloster'] = array(
 				'type' => 'passthrough',
 			),
 		),
-
 		't3ver_label' => array(
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.versionLabel',
 			'config' => array(
@@ -56,7 +54,6 @@ $TCA['tx_germaniasacra_domain_model_kloster'] = array(
 				'max' => 255,
 			)
 		),
-	
 		'hidden' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.hidden',
@@ -96,15 +93,6 @@ $TCA['tx_germaniasacra_domain_model_kloster'] = array(
 				),
 			),
 		),
-		'kloster_id' => array(
-			'exclude' => 0,
-			'label' => 'LLL:EXT:germaniasacra/Resources/Private/Language/locallang_db.xlf:tx_germaniasacra_domain_model_kloster.kloster_id',
-			'config' => array(
-				'type' => 'input',
-				'size' => 4,
-				'eval' => 'int'
-			),
-		),
 		'kloster' => array(
 			'exclude' => 0,
 			'label' => 'LLL:EXT:germaniasacra/Resources/Private/Language/locallang_db.xlf:tx_germaniasacra_domain_model_kloster.kloster',
@@ -112,6 +100,15 @@ $TCA['tx_germaniasacra_domain_model_kloster'] = array(
 				'type' => 'input',
 				'size' => 30,
 				'eval' => 'trim'
+			),
+		),
+		'kloster_id' => array(
+			'exclude' => 0,
+			'label' => 'LLL:EXT:germaniasacra/Resources/Private/Language/locallang_db.xlf:tx_germaniasacra_domain_model_kloster.kloster_id',
+			'config' => array(
+				'type' => 'input',
+				'size' => 4,
+				'eval' => 'int'
 			),
 		),
 		'patrozinium' => array(
@@ -152,54 +149,75 @@ $TCA['tx_germaniasacra_domain_model_kloster'] = array(
 				'eval' => 'trim'
 			),
 		),
-		'band' => array(
-			'exclude' => 0,
-			'label' => 'LLL:EXT:germaniasacra/Resources/Private/Language/locallang_db.xlf:tx_germaniasacra_domain_model_kloster.band',
-			'config' => array(
-				'type' => 'inline',
-				'foreign_table' => 'tx_germaniasacra_domain_model_band',
-				'minitems' => 0,
-				'maxitems' => 1,
-				'appearance' => array(
-					'collapseAll' => 0,
-					'levelLinksPosition' => 'top',
-					'showSynchronizationLink' => 1,
-					'showPossibleLocalizationRecords' => 1,
-					'showAllLocalizationLink' => 1
-				),
-			),
-		),
 		'bearbeitungsstatus' => array(
 			'exclude' => 0,
 			'label' => 'LLL:EXT:germaniasacra/Resources/Private/Language/locallang_db.xlf:tx_germaniasacra_domain_model_kloster.bearbeitungsstatus',
 			'config' => array(
-				'type' => 'inline',
-				'foreign_table' => 'tx_germaniasacra_domain_model_bearbeitungsstatus',
-				'minitems' => 0,
-				'maxitems' => 1,
-				'appearance' => array(
-					'collapseAll' => 0,
-					'levelLinksPosition' => 'top',
-					'showSynchronizationLink' => 1,
-					'showPossibleLocalizationRecords' => 1,
-					'showAllLocalizationLink' => 1
+				'type' => 'select',
+				'items' => array(
+					array('-- Label --', 0),
 				),
+				'size' => 1,
+				'maxitems' => 1,
+				'eval' => ''
 			),
 		),
 		'personallistenstatus' => array(
 			'exclude' => 0,
 			'label' => 'LLL:EXT:germaniasacra/Resources/Private/Language/locallang_db.xlf:tx_germaniasacra_domain_model_kloster.personallistenstatus',
 			'config' => array(
-				'type' => 'inline',
-				'foreign_table' => 'tx_germaniasacra_domain_model_personallistenstatus',
+				'type' => 'select',
+				'items' => array(
+					array('-- Label --', 0),
+				),
+				'size' => 1,
+				'maxitems' => 1,
+				'eval' => ''
+			),
+		),
+		'band' => array(
+			'exclude' => 0,
+			'label' => 'LLL:EXT:germaniasacra/Resources/Private/Language/locallang_db.xlf:tx_germaniasacra_domain_model_kloster.band',
+			'config' => array(
+				'type' => 'select',
+				'foreign_table' => 'tx_germaniasacra_domain_model_band',
 				'minitems' => 0,
 				'maxitems' => 1,
-				'appearance' => array(
-					'collapseAll' => 0,
-					'levelLinksPosition' => 'top',
-					'showSynchronizationLink' => 1,
-					'showPossibleLocalizationRecords' => 1,
-					'showAllLocalizationLink' => 1
+			),
+		),
+		'url' => array(
+			'exclude' => 0,
+			'label' => 'LLL:EXT:germaniasacra/Resources/Private/Language/locallang_db.xlf:tx_germaniasacra_domain_model_kloster.url',
+			'config' => array(
+				'type' => 'select',
+				'foreign_table' => 'tx_germaniasacra_domain_model_url',
+				'MM' => 'tx_germaniasacra_kloster_url_mm',
+				'size' => 10,
+				'autoSizeMax' => 30,
+				'maxitems' => 9999,
+				'multiple' => 0,
+				'wizards' => array(
+					'_PADDING' => 1,
+					'_VERTICAL' => 1,
+					'edit' => array(
+						'type' => 'popup',
+						'title' => 'Edit',
+						'script' => 'wizard_edit.php',
+						'icon' => 'edit2.gif',
+						'popup_onlyOpenIfSelected' => 1,
+						'JSopenParams' => 'height=350,width=580,status=0,menubar=0,scrollbars=1',
+						),
+					'add' => Array(
+						'type' => 'script',
+						'title' => 'Create new',
+						'icon' => 'add.gif',
+						'params' => array(
+							'table' => 'tx_germaniasacra_domain_model_url',
+							'pid' => '###CURRENT_PID###',
+							'setValue' => 'prepend'
+							),
+						'script' => 'wizard_add.php',
+					),
 				),
 			),
 		),

@@ -28,6 +28,7 @@ namespace Subugoe\Germaniasacra\Domain\Model;
 /**
  *
  *
+ * @package germaniasacra
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
  */
