@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2013-11-20T11:40:30Z" product-name="germaniasacra">
+	<file source-language="en" datatype="plaintext" original="messages" date="2013-11-20T14:54:07Z" product-name="germaniasacra">
 		<header/>
 		<body>
 
@@ -197,6 +197,34 @@
 			</trans-unit>
 			<trans-unit id="tx_germaniasacra_domain_model_url.typ">
 				<source>Typ</source>
+			</trans-unit>
+
+			<trans-unit id="tx_germaniasacra_domain_model_klosterstandort">
+				<source>Kloster Standort</source>
+			</trans-unit>
+			<trans-unit id="tx_germaniasacra_domain_model_klosterstandort.gruender">
+				<source>Gruender</source>
+			</trans-unit>
+			<trans-unit id="tx_germaniasacra_domain_model_klosterstandort.bemerkung">
+				<source>Bemerkung</source>
+			</trans-unit>
+			<trans-unit id="tx_germaniasacra_domain_model_klosterstandort.breite">
+				<source>Breite</source>
+			</trans-unit>
+			<trans-unit id="tx_germaniasacra_domain_model_klosterstandort.laenge">
+				<source>Laenge</source>
+			</trans-unit>
+			<trans-unit id="tx_germaniasacra_domain_model_klosterstandort.bemerkung_standort">
+				<source>Bemerkung Standort</source>
+			</trans-unit>
+			<trans-unit id="tx_germaniasacra_domain_model_klosterstandort.temp_literatur_alt">
+				<source>Temp Literatur Alt</source>
+			</trans-unit>
+			<trans-unit id="tx_germaniasacra_domain_model_klosterstandort.kloster">
+				<source>Kloster</source>
+			</trans-unit>
+			<trans-unit id="tx_germaniasacra_domain_model_klosterstandort.ort">
+				<source>Ort</source>
 			</trans-unit>
 
 		</body>

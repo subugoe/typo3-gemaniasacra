@@ -4,17 +4,11 @@
 		<header/>
 		<body>
 
-			<trans-unit id="ort.description">
-				<source>ort</source>
+			<trans-unit id="gruender.description">
+				<source>gruender</source>
 			</trans-unit>
-			<trans-unit id="gemeinde.description">
-				<source>gemeinde</source>
-			</trans-unit>
-			<trans-unit id="kreis.description">
-				<source>kreis</source>
-			</trans-unit>
-			<trans-unit id="wuestung.description">
-				<source>wuestung</source>
+			<trans-unit id="bemerkung.description">
+				<source>bemerkung</source>
 			</trans-unit>
 			<trans-unit id="breite.description">
 				<source>breite</source>
@@ -22,14 +16,17 @@
 			<trans-unit id="laenge.description">
 				<source>laenge</source>
 			</trans-unit>
-			<trans-unit id="land.description">
-				<source>land</source>
+			<trans-unit id="bemerkung_standort.description">
+				<source>bemerkungStandort</source>
 			</trans-unit>
-			<trans-unit id="bistum.description">
-				<source>bistum</source>
+			<trans-unit id="temp_literatur_alt.description">
+				<source>tempLiteraturAlt</source>
 			</trans-unit>
-			<trans-unit id="url.description">
-				<source>url</source>
+			<trans-unit id="kloster.description">
+				<source>kloster</source>
+			</trans-unit>
+			<trans-unit id="ort.description">
+				<source>ort</source>
 			</trans-unit>
 		</body>
 	</file>
