@@ -99,7 +99,7 @@ CREATE TABLE tx_germaniasacra_domain_model_ort (
 	breite double(11,2) DEFAULT '0.00' NOT NULL,
 	laenge double(11,2) DEFAULT '0.00' NOT NULL,
 	land int(11) unsigned DEFAULT '0',
-	bistum int(11) unsigned DEFAULT '0',
+	bistum int(11) unsigned DEFAULT '0' NOT NULL,
 	url int(11) unsigned DEFAULT '0' NOT NULL,
 
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
@@ -240,6 +240,7 @@ CREATE TABLE tx_germaniasacra_domain_model_kloster (
 	personallistenstatus int(11) DEFAULT '0' NOT NULL,
 	band int(11) unsigned DEFAULT '0',
 	url int(11) unsigned DEFAULT '0' NOT NULL,
+	standort int(11) unsigned DEFAULT '0' NOT NULL,
 
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
 	crdate int(11) unsigned DEFAULT '0' NOT NULL,
@@ -326,9 +327,9 @@ CREATE TABLE tx_germaniasacra_domain_model_klosterorden (
 
 	bemerkung text NOT NULL,
 	klosterstatus varchar(255) DEFAULT '' NOT NULL,
-	kloster int(11) unsigned DEFAULT '0',
-	orden int(11) unsigned DEFAULT '0',
-	zeitraum int(11) unsigned DEFAULT '0',
+	kloster int(11) unsigned DEFAULT '0' NOT NULL,
+	orden int(11) unsigned DEFAULT '0' NOT NULL,
+	zeitraum int(11) unsigned DEFAULT '0' NOT NULL,
 
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
 	crdate int(11) unsigned DEFAULT '0' NOT NULL,
@@ -416,8 +417,7 @@ CREATE TABLE tx_germaniasacra_domain_model_klosterstandort (
 	laenge double(11,2) DEFAULT '0.00' NOT NULL,
 	bemerkung_standort text NOT NULL,
 	temp_literatur_alt text NOT NULL,
-	kloster int(11) unsigned DEFAULT '0',
-	ort int(11) unsigned DEFAULT '0',
+	ort int(11) unsigned DEFAULT '0' NOT NULL,
 
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
 	crdate int(11) unsigned DEFAULT '0' NOT NULL,
@@ -453,6 +453,19 @@ CREATE TABLE tx_germaniasacra_domain_model_klosterstandort (
 # Table structure for table 'tx_germaniasacra_orden_url_mm'
 #
 CREATE TABLE tx_germaniasacra_orden_url_mm (
+	uid_local int(11) unsigned DEFAULT '0' NOT NULL,
+	uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+	sorting int(11) unsigned DEFAULT '0' NOT NULL,
+	sorting_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+
+	KEY uid_local (uid_local),
+	KEY uid_foreign (uid_foreign)
+);
+
+#
+# Table structure for table 'tx_germaniasacra_ort_bistum_mm'
+#
+CREATE TABLE tx_germaniasacra_ort_bistum_mm (
 	uid_local int(11) unsigned DEFAULT '0' NOT NULL,
 	uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
 	sorting int(11) unsigned DEFAULT '0' NOT NULL,
@@ -505,6 +518,71 @@ CREATE TABLE tx_germaniasacra_band_url_mm (
 # Table structure for table 'tx_germaniasacra_kloster_url_mm'
 #
 CREATE TABLE tx_germaniasacra_kloster_url_mm (
+	uid_local int(11) unsigned DEFAULT '0' NOT NULL,
+	uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+	sorting int(11) unsigned DEFAULT '0' NOT NULL,
+	sorting_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+
+	KEY uid_local (uid_local),
+	KEY uid_foreign (uid_foreign)
+);
+
+#
+# Table structure for table 'tx_germaniasacra_kloster_klosterstandort_mm'
+#
+CREATE TABLE tx_germaniasacra_kloster_klosterstandort_mm (
+	uid_local int(11) unsigned DEFAULT '0' NOT NULL,
+	uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+	sorting int(11) unsigned DEFAULT '0' NOT NULL,
+	sorting_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+
+	KEY uid_local (uid_local),
+	KEY uid_foreign (uid_foreign)
+);
+
+#
+# Table structure for table 'tx_germaniasacra_klosterorden_kloster_mm'
+#
+CREATE TABLE tx_germaniasacra_klosterorden_kloster_mm (
+	uid_local int(11) unsigned DEFAULT '0' NOT NULL,
+	uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+	sorting int(11) unsigned DEFAULT '0' NOT NULL,
+	sorting_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+
+	KEY uid_local (uid_local),
+	KEY uid_foreign (uid_foreign)
+);
+
+#
+# Table structure for table 'tx_germaniasacra_klosterorden_orden_mm'
+#
+CREATE TABLE tx_germaniasacra_klosterorden_orden_mm (
+	uid_local int(11) unsigned DEFAULT '0' NOT NULL,
+	uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+	sorting int(11) unsigned DEFAULT '0' NOT NULL,
+	sorting_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+
+	KEY uid_local (uid_local),
+	KEY uid_foreign (uid_foreign)
+);
+
+#
+# Table structure for table 'tx_germaniasacra_klosterorden_zeitraum_mm'
+#
+CREATE TABLE tx_germaniasacra_klosterorden_zeitraum_mm (
+	uid_local int(11) unsigned DEFAULT '0' NOT NULL,
+	uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+	sorting int(11) unsigned DEFAULT '0' NOT NULL,
+	sorting_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+
+	KEY uid_local (uid_local),
+	KEY uid_foreign (uid_foreign)
+);
+
+#
+# Table structure for table 'tx_germaniasacra_klosterstandort_ort_mm'
+#
+CREATE TABLE tx_germaniasacra_klosterstandort_ort_mm (
 	uid_local int(11) unsigned DEFAULT '0' NOT NULL,
 	uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
 	sorting int(11) unsigned DEFAULT '0' NOT NULL,

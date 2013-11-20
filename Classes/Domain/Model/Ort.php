@@ -86,7 +86,7 @@ class Ort extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * bistum
 	 *
-	 * @var \Subugoe\Germaniasacra\Domain\Model\Bistum
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Germaniasacra\Domain\Model\Bistum>
 	 */
 	protected $bistum;
 
@@ -118,6 +118,8 @@ class Ort extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 		 * It will be rewritten on each save in the extension builder
 		 * You may modify the constructor of this class instead
 		 */
+		$this->bistum = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+		
 		$this->url = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 	}
 
@@ -264,9 +266,29 @@ class Ort extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
+	 * Adds a Bistum
+	 *
+	 * @param \Subugoe\Germaniasacra\Domain\Model\Bistum $bistum
+	 * @return void
+	 */
+	public function addBistum(\Subugoe\Germaniasacra\Domain\Model\Bistum $bistum) {
+		$this->bistum->attach($bistum);
+	}
+
+	/**
+	 * Removes a Bistum
+	 *
+	 * @param \Subugoe\Germaniasacra\Domain\Model\Bistum $bistumToRemove The Bistum to be removed
+	 * @return void
+	 */
+	public function removeBistum(\Subugoe\Germaniasacra\Domain\Model\Bistum $bistumToRemove) {
+		$this->bistum->detach($bistumToRemove);
+	}
+
+	/**
 	 * Returns the bistum
 	 *
-	 * @return \Subugoe\Germaniasacra\Domain\Model\Bistum $bistum
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Germaniasacra\Domain\Model\Bistum> $bistum
 	 */
 	public function getBistum() {
 		return $this->bistum;
@@ -275,10 +297,10 @@ class Ort extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * Sets the bistum
 	 *
-	 * @param \Subugoe\Germaniasacra\Domain\Model\Bistum $bistum
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Germaniasacra\Domain\Model\Bistum> $bistum
 	 * @return void
 	 */
-	public function setBistum(\Subugoe\Germaniasacra\Domain\Model\Bistum $bistum) {
+	public function setBistum(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $bistum) {
 		$this->bistum = $bistum;
 	}
 

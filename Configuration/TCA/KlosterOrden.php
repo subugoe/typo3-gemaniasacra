@@ -118,8 +118,34 @@ $TCA['tx_germaniasacra_domain_model_klosterorden'] = array(
 			'config' => array(
 				'type' => 'select',
 				'foreign_table' => 'tx_germaniasacra_domain_model_kloster',
-				'minitems' => 0,
-				'maxitems' => 1,
+				'MM' => 'tx_germaniasacra_klosterorden_kloster_mm',
+				'size' => 10,
+				'autoSizeMax' => 30,
+				'maxitems' => 9999,
+				'multiple' => 0,
+				'wizards' => array(
+					'_PADDING' => 1,
+					'_VERTICAL' => 1,
+					'edit' => array(
+						'type' => 'popup',
+						'title' => 'Edit',
+						'script' => 'wizard_edit.php',
+						'icon' => 'edit2.gif',
+						'popup_onlyOpenIfSelected' => 1,
+						'JSopenParams' => 'height=350,width=580,status=0,menubar=0,scrollbars=1',
+						),
+					'add' => Array(
+						'type' => 'script',
+						'title' => 'Create new',
+						'icon' => 'add.gif',
+						'params' => array(
+							'table' => 'tx_germaniasacra_domain_model_kloster',
+							'pid' => '###CURRENT_PID###',
+							'setValue' => 'prepend'
+							),
+						'script' => 'wizard_add.php',
+					),
+				),
 			),
 		),
 		'orden' => array(
@@ -128,8 +154,34 @@ $TCA['tx_germaniasacra_domain_model_klosterorden'] = array(
 			'config' => array(
 				'type' => 'select',
 				'foreign_table' => 'tx_germaniasacra_domain_model_orden',
-				'minitems' => 0,
-				'maxitems' => 1,
+				'MM' => 'tx_germaniasacra_klosterorden_orden_mm',
+				'size' => 10,
+				'autoSizeMax' => 30,
+				'maxitems' => 9999,
+				'multiple' => 0,
+				'wizards' => array(
+					'_PADDING' => 1,
+					'_VERTICAL' => 1,
+					'edit' => array(
+						'type' => 'popup',
+						'title' => 'Edit',
+						'script' => 'wizard_edit.php',
+						'icon' => 'edit2.gif',
+						'popup_onlyOpenIfSelected' => 1,
+						'JSopenParams' => 'height=350,width=580,status=0,menubar=0,scrollbars=1',
+						),
+					'add' => Array(
+						'type' => 'script',
+						'title' => 'Create new',
+						'icon' => 'add.gif',
+						'params' => array(
+							'table' => 'tx_germaniasacra_domain_model_orden',
+							'pid' => '###CURRENT_PID###',
+							'setValue' => 'prepend'
+							),
+						'script' => 'wizard_add.php',
+					),
+				),
 			),
 		),
 		'zeitraum' => array(
@@ -138,8 +190,34 @@ $TCA['tx_germaniasacra_domain_model_klosterorden'] = array(
 			'config' => array(
 				'type' => 'select',
 				'foreign_table' => 'tx_germaniasacra_domain_model_zeitraum',
-				'minitems' => 0,
-				'maxitems' => 1,
+				'MM' => 'tx_germaniasacra_klosterorden_zeitraum_mm',
+				'size' => 10,
+				'autoSizeMax' => 30,
+				'maxitems' => 9999,
+				'multiple' => 0,
+				'wizards' => array(
+					'_PADDING' => 1,
+					'_VERTICAL' => 1,
+					'edit' => array(
+						'type' => 'popup',
+						'title' => 'Edit',
+						'script' => 'wizard_edit.php',
+						'icon' => 'edit2.gif',
+						'popup_onlyOpenIfSelected' => 1,
+						'JSopenParams' => 'height=350,width=580,status=0,menubar=0,scrollbars=1',
+						),
+					'add' => Array(
+						'type' => 'script',
+						'title' => 'Create new',
+						'icon' => 'add.gif',
+						'params' => array(
+							'table' => 'tx_germaniasacra_domain_model_zeitraum',
+							'pid' => '###CURRENT_PID###',
+							'setValue' => 'prepend'
+							),
+						'script' => 'wizard_add.php',
+					),
+				),
 			),
 		),
 	),

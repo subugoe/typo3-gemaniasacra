@@ -169,12 +169,60 @@ class OrtTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 	/**
 	 * @test
 	 */
-	public function getBistumReturnsInitialValueForBistum() { }
+	public function getBistumReturnsInitialValueForBistum() { 
+		$newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
+		$this->assertEquals(
+			$newObjectStorage,
+			$this->fixture->getBistum()
+		);
+	}
 
 	/**
 	 * @test
 	 */
-	public function setBistumForBistumSetsBistum() { }
+	public function setBistumForObjectStorageContainingBistumSetsBistum() { 
+		$bistum = new \Subugoe\Germaniasacra\Domain\Model\Bistum();
+		$objectStorageHoldingExactlyOneBistum = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
+		$objectStorageHoldingExactlyOneBistum->attach($bistum);
+		$this->fixture->setBistum($objectStorageHoldingExactlyOneBistum);
+
+		$this->assertSame(
+			$objectStorageHoldingExactlyOneBistum,
+			$this->fixture->getBistum()
+		);
+	}
+	
+	/**
+	 * @test
+	 */
+	public function addBistumToObjectStorageHoldingBistum() {
+		$bistum = new \Subugoe\Germaniasacra\Domain\Model\Bistum();
+		$objectStorageHoldingExactlyOneBistum = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
+		$objectStorageHoldingExactlyOneBistum->attach($bistum);
+		$this->fixture->addBistum($bistum);
+
+		$this->assertEquals(
+			$objectStorageHoldingExactlyOneBistum,
+			$this->fixture->getBistum()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function removeBistumFromObjectStorageHoldingBistum() {
+		$bistum = new \Subugoe\Germaniasacra\Domain\Model\Bistum();
+		$localObjectStorage = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
+		$localObjectStorage->attach($bistum);
+		$localObjectStorage->detach($bistum);
+		$this->fixture->addBistum($bistum);
+		$this->fixture->removeBistum($bistum);
+
+		$this->assertEquals(
+			$localObjectStorage,
+			$this->fixture->getBistum()
+		);
+	}
 	
 	/**
 	 * @test

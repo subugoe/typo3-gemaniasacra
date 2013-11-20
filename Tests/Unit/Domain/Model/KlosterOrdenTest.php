@@ -88,32 +88,176 @@ class KlosterOrdenTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 	/**
 	 * @test
 	 */
-	public function getKlosterReturnsInitialValueForKloster() { }
+	public function getKlosterReturnsInitialValueForKloster() { 
+		$newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
+		$this->assertEquals(
+			$newObjectStorage,
+			$this->fixture->getKloster()
+		);
+	}
 
 	/**
 	 * @test
 	 */
-	public function setKlosterForKlosterSetsKloster() { }
+	public function setKlosterForObjectStorageContainingKlosterSetsKloster() { 
+		$kloster = new \Subugoe\Germaniasacra\Domain\Model\Kloster();
+		$objectStorageHoldingExactlyOneKloster = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
+		$objectStorageHoldingExactlyOneKloster->attach($kloster);
+		$this->fixture->setKloster($objectStorageHoldingExactlyOneKloster);
+
+		$this->assertSame(
+			$objectStorageHoldingExactlyOneKloster,
+			$this->fixture->getKloster()
+		);
+	}
 	
 	/**
 	 * @test
 	 */
-	public function getOrdenReturnsInitialValueForOrden() { }
+	public function addKlosterToObjectStorageHoldingKloster() {
+		$kloster = new \Subugoe\Germaniasacra\Domain\Model\Kloster();
+		$objectStorageHoldingExactlyOneKloster = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
+		$objectStorageHoldingExactlyOneKloster->attach($kloster);
+		$this->fixture->addKloster($kloster);
+
+		$this->assertEquals(
+			$objectStorageHoldingExactlyOneKloster,
+			$this->fixture->getKloster()
+		);
+	}
 
 	/**
 	 * @test
 	 */
-	public function setOrdenForOrdenSetsOrden() { }
+	public function removeKlosterFromObjectStorageHoldingKloster() {
+		$kloster = new \Subugoe\Germaniasacra\Domain\Model\Kloster();
+		$localObjectStorage = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
+		$localObjectStorage->attach($kloster);
+		$localObjectStorage->detach($kloster);
+		$this->fixture->addKloster($kloster);
+		$this->fixture->removeKloster($kloster);
+
+		$this->assertEquals(
+			$localObjectStorage,
+			$this->fixture->getKloster()
+		);
+	}
 	
 	/**
 	 * @test
 	 */
-	public function getZeitraumReturnsInitialValueForZeitraum() { }
+	public function getOrdenReturnsInitialValueForOrden() { 
+		$newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
+		$this->assertEquals(
+			$newObjectStorage,
+			$this->fixture->getOrden()
+		);
+	}
 
 	/**
 	 * @test
 	 */
-	public function setZeitraumForZeitraumSetsZeitraum() { }
+	public function setOrdenForObjectStorageContainingOrdenSetsOrden() { 
+		$orden = new \Subugoe\Germaniasacra\Domain\Model\Orden();
+		$objectStorageHoldingExactlyOneOrden = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
+		$objectStorageHoldingExactlyOneOrden->attach($orden);
+		$this->fixture->setOrden($objectStorageHoldingExactlyOneOrden);
+
+		$this->assertSame(
+			$objectStorageHoldingExactlyOneOrden,
+			$this->fixture->getOrden()
+		);
+	}
+	
+	/**
+	 * @test
+	 */
+	public function addOrdenToObjectStorageHoldingOrden() {
+		$orden = new \Subugoe\Germaniasacra\Domain\Model\Orden();
+		$objectStorageHoldingExactlyOneOrden = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
+		$objectStorageHoldingExactlyOneOrden->attach($orden);
+		$this->fixture->addOrden($orden);
+
+		$this->assertEquals(
+			$objectStorageHoldingExactlyOneOrden,
+			$this->fixture->getOrden()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function removeOrdenFromObjectStorageHoldingOrden() {
+		$orden = new \Subugoe\Germaniasacra\Domain\Model\Orden();
+		$localObjectStorage = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
+		$localObjectStorage->attach($orden);
+		$localObjectStorage->detach($orden);
+		$this->fixture->addOrden($orden);
+		$this->fixture->removeOrden($orden);
+
+		$this->assertEquals(
+			$localObjectStorage,
+			$this->fixture->getOrden()
+		);
+	}
+	
+	/**
+	 * @test
+	 */
+	public function getZeitraumReturnsInitialValueForZeitraum() { 
+		$newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
+		$this->assertEquals(
+			$newObjectStorage,
+			$this->fixture->getZeitraum()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setZeitraumForObjectStorageContainingZeitraumSetsZeitraum() { 
+		$zeitraum = new \Subugoe\Germaniasacra\Domain\Model\Zeitraum();
+		$objectStorageHoldingExactlyOneZeitraum = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
+		$objectStorageHoldingExactlyOneZeitraum->attach($zeitraum);
+		$this->fixture->setZeitraum($objectStorageHoldingExactlyOneZeitraum);
+
+		$this->assertSame(
+			$objectStorageHoldingExactlyOneZeitraum,
+			$this->fixture->getZeitraum()
+		);
+	}
+	
+	/**
+	 * @test
+	 */
+	public function addZeitraumToObjectStorageHoldingZeitraum() {
+		$zeitraum = new \Subugoe\Germaniasacra\Domain\Model\Zeitraum();
+		$objectStorageHoldingExactlyOneZeitraum = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
+		$objectStorageHoldingExactlyOneZeitraum->attach($zeitraum);
+		$this->fixture->addZeitraum($zeitraum);
+
+		$this->assertEquals(
+			$objectStorageHoldingExactlyOneZeitraum,
+			$this->fixture->getZeitraum()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function removeZeitraumFromObjectStorageHoldingZeitraum() {
+		$zeitraum = new \Subugoe\Germaniasacra\Domain\Model\Zeitraum();
+		$localObjectStorage = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
+		$localObjectStorage->attach($zeitraum);
+		$localObjectStorage->detach($zeitraum);
+		$this->fixture->addZeitraum($zeitraum);
+		$this->fixture->removeZeitraum($zeitraum);
+
+		$this->assertEquals(
+			$localObjectStorage,
+			$this->fixture->getZeitraum()
+		);
+	}
 	
 }
 ?>

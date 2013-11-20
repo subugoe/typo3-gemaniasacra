@@ -77,18 +77,35 @@ class KlosterStandort extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObjec
 	protected $tempLiteraturAlt;
 
 	/**
-	 * kloster
-	 *
-	 * @var \Subugoe\Germaniasacra\Domain\Model\Kloster
-	 */
-	protected $kloster;
-
-	/**
 	 * ort
 	 *
-	 * @var \Subugoe\Germaniasacra\Domain\Model\Ort
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Germaniasacra\Domain\Model\Ort>
 	 */
 	protected $ort;
+
+	/**
+	 * __construct
+	 *
+	 * @return KlosterStandort
+	 */
+	public function __construct() {
+		//Do not remove the next line: It would break the functionality
+		$this->initStorageObjects();
+	}
+
+	/**
+	 * Initializes all ObjectStorage properties.
+	 *
+	 * @return void
+	 */
+	protected function initStorageObjects() {
+		/**
+		 * Do not modify this method!
+		 * It will be rewritten on each save in the extension builder
+		 * You may modify the constructor of this class instead
+		 */
+		$this->ort = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+	}
 
 	/**
 	 * Returns the gruender
@@ -205,28 +222,29 @@ class KlosterStandort extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObjec
 	}
 
 	/**
-	 * Returns the kloster
+	 * Adds a Ort
 	 *
-	 * @return \Subugoe\Germaniasacra\Domain\Model\Kloster $kloster
+	 * @param \Subugoe\Germaniasacra\Domain\Model\Ort $ort
+	 * @return void
 	 */
-	public function getKloster() {
-		return $this->kloster;
+	public function addOrt(\Subugoe\Germaniasacra\Domain\Model\Ort $ort) {
+		$this->ort->attach($ort);
 	}
 
 	/**
-	 * Sets the kloster
+	 * Removes a Ort
 	 *
-	 * @param \Subugoe\Germaniasacra\Domain\Model\Kloster $kloster
+	 * @param \Subugoe\Germaniasacra\Domain\Model\Ort $ortToRemove The Ort to be removed
 	 * @return void
 	 */
-	public function setKloster(\Subugoe\Germaniasacra\Domain\Model\Kloster $kloster) {
-		$this->kloster = $kloster;
+	public function removeOrt(\Subugoe\Germaniasacra\Domain\Model\Ort $ortToRemove) {
+		$this->ort->detach($ortToRemove);
 	}
 
 	/**
 	 * Returns the ort
 	 *
-	 * @return \Subugoe\Germaniasacra\Domain\Model\Ort $ort
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Germaniasacra\Domain\Model\Ort> $ort
 	 */
 	public function getOrt() {
 		return $this->ort;
@@ -235,10 +253,10 @@ class KlosterStandort extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObjec
 	/**
 	 * Sets the ort
 	 *
-	 * @param \Subugoe\Germaniasacra\Domain\Model\Ort $ort
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Germaniasacra\Domain\Model\Ort> $ort
 	 * @return void
 	 */
-	public function setOrt(\Subugoe\Germaniasacra\Domain\Model\Ort $ort) {
+	public function setOrt(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $ort) {
 		$this->ort = $ort;
 	}
 

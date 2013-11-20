@@ -32,7 +32,7 @@ namespace Subugoe\Germaniasacra\Domain\Model;
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
  */
-class KlosterOrden extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
+class KlosterOrden extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObject {
 
 	/**
 	 * bemerkung
@@ -51,23 +51,51 @@ class KlosterOrden extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * kloster
 	 *
-	 * @var \Subugoe\Germaniasacra\Domain\Model\Kloster
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Germaniasacra\Domain\Model\Kloster>
 	 */
 	protected $kloster;
 
 	/**
 	 * orden
 	 *
-	 * @var \Subugoe\Germaniasacra\Domain\Model\Orden
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Germaniasacra\Domain\Model\Orden>
 	 */
 	protected $orden;
 
 	/**
 	 * zeitraum
 	 *
-	 * @var \Subugoe\Germaniasacra\Domain\Model\Zeitraum
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Germaniasacra\Domain\Model\Zeitraum>
 	 */
 	protected $zeitraum;
+
+	/**
+	 * __construct
+	 *
+	 * @return KlosterOrden
+	 */
+	public function __construct() {
+		//Do not remove the next line: It would break the functionality
+		$this->initStorageObjects();
+	}
+
+	/**
+	 * Initializes all ObjectStorage properties.
+	 *
+	 * @return void
+	 */
+	protected function initStorageObjects() {
+		/**
+		 * Do not modify this method!
+		 * It will be rewritten on each save in the extension builder
+		 * You may modify the constructor of this class instead
+		 */
+		$this->kloster = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+		
+		$this->orden = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+		
+		$this->zeitraum = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+	}
 
 	/**
 	 * Returns the bemerkung
@@ -108,9 +136,29 @@ class KlosterOrden extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
+	 * Adds a Kloster
+	 *
+	 * @param \Subugoe\Germaniasacra\Domain\Model\Kloster $kloster
+	 * @return void
+	 */
+	public function addKloster(\Subugoe\Germaniasacra\Domain\Model\Kloster $kloster) {
+		$this->kloster->attach($kloster);
+	}
+
+	/**
+	 * Removes a Kloster
+	 *
+	 * @param \Subugoe\Germaniasacra\Domain\Model\Kloster $klosterToRemove The Kloster to be removed
+	 * @return void
+	 */
+	public function removeKloster(\Subugoe\Germaniasacra\Domain\Model\Kloster $klosterToRemove) {
+		$this->kloster->detach($klosterToRemove);
+	}
+
+	/**
 	 * Returns the kloster
 	 *
-	 * @return \Subugoe\Germaniasacra\Domain\Model\Kloster $kloster
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Germaniasacra\Domain\Model\Kloster> $kloster
 	 */
 	public function getKloster() {
 		return $this->kloster;
@@ -119,17 +167,37 @@ class KlosterOrden extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * Sets the kloster
 	 *
-	 * @param \Subugoe\Germaniasacra\Domain\Model\Kloster $kloster
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Germaniasacra\Domain\Model\Kloster> $kloster
 	 * @return void
 	 */
-	public function setKloster(\Subugoe\Germaniasacra\Domain\Model\Kloster $kloster) {
+	public function setKloster(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $kloster) {
 		$this->kloster = $kloster;
+	}
+
+	/**
+	 * Adds a Orden
+	 *
+	 * @param \Subugoe\Germaniasacra\Domain\Model\Orden $orden
+	 * @return void
+	 */
+	public function addOrden(\Subugoe\Germaniasacra\Domain\Model\Orden $orden) {
+		$this->orden->attach($orden);
+	}
+
+	/**
+	 * Removes a Orden
+	 *
+	 * @param \Subugoe\Germaniasacra\Domain\Model\Orden $ordenToRemove The Orden to be removed
+	 * @return void
+	 */
+	public function removeOrden(\Subugoe\Germaniasacra\Domain\Model\Orden $ordenToRemove) {
+		$this->orden->detach($ordenToRemove);
 	}
 
 	/**
 	 * Returns the orden
 	 *
-	 * @return \Subugoe\Germaniasacra\Domain\Model\Orden $orden
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Germaniasacra\Domain\Model\Orden> $orden
 	 */
 	public function getOrden() {
 		return $this->orden;
@@ -138,17 +206,37 @@ class KlosterOrden extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * Sets the orden
 	 *
-	 * @param \Subugoe\Germaniasacra\Domain\Model\Orden $orden
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Germaniasacra\Domain\Model\Orden> $orden
 	 * @return void
 	 */
-	public function setOrden(\Subugoe\Germaniasacra\Domain\Model\Orden $orden) {
+	public function setOrden(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $orden) {
 		$this->orden = $orden;
+	}
+
+	/**
+	 * Adds a Zeitraum
+	 *
+	 * @param \Subugoe\Germaniasacra\Domain\Model\Zeitraum $zeitraum
+	 * @return void
+	 */
+	public function addZeitraum(\Subugoe\Germaniasacra\Domain\Model\Zeitraum $zeitraum) {
+		$this->zeitraum->attach($zeitraum);
+	}
+
+	/**
+	 * Removes a Zeitraum
+	 *
+	 * @param \Subugoe\Germaniasacra\Domain\Model\Zeitraum $zeitraumToRemove The Zeitraum to be removed
+	 * @return void
+	 */
+	public function removeZeitraum(\Subugoe\Germaniasacra\Domain\Model\Zeitraum $zeitraumToRemove) {
+		$this->zeitraum->detach($zeitraumToRemove);
 	}
 
 	/**
 	 * Returns the zeitraum
 	 *
-	 * @return \Subugoe\Germaniasacra\Domain\Model\Zeitraum $zeitraum
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Germaniasacra\Domain\Model\Zeitraum> $zeitraum
 	 */
 	public function getZeitraum() {
 		return $this->zeitraum;
@@ -157,10 +245,10 @@ class KlosterOrden extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * Sets the zeitraum
 	 *
-	 * @param \Subugoe\Germaniasacra\Domain\Model\Zeitraum $zeitraum
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Germaniasacra\Domain\Model\Zeitraum> $zeitraum
 	 * @return void
 	 */
-	public function setZeitraum(\Subugoe\Germaniasacra\Domain\Model\Zeitraum $zeitraum) {
+	public function setZeitraum(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $zeitraum) {
 		$this->zeitraum = $zeitraum;
 	}
 

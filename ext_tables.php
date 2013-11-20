@@ -179,7 +179,7 @@ $TCA['tx_germaniasacra_domain_model_kloster'] = array(
 			'starttime' => 'starttime',
 			'endtime' => 'endtime',
 		),
-		'searchFields' => 'kloster,kloster_id,patrozinium,bemerkung,band_seite,text_gs_band,bearbeitungsstatus,personallistenstatus,band,url,',
+		'searchFields' => 'kloster,kloster_id,patrozinium,bemerkung,band_seite,text_gs_band,bearbeitungsstatus,personallistenstatus,band,url,standort,',
 		'dynamicConfigFile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'Configuration/TCA/Kloster.php',
 		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY) . 'Resources/Public/Icons/tx_germaniasacra_domain_model_kloster.gif'
 	),
@@ -295,7 +295,7 @@ $TCA['tx_germaniasacra_domain_model_klosterstandort'] = array(
 			'starttime' => 'starttime',
 			'endtime' => 'endtime',
 		),
-		'searchFields' => 'gruender,bemerkung,breite,laenge,bemerkung_standort,temp_literatur_alt,kloster,ort,',
+		'searchFields' => 'gruender,bemerkung,breite,laenge,bemerkung_standort,temp_literatur_alt,ort,',
 		'dynamicConfigFile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'Configuration/TCA/KlosterStandort.php',
 		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY) . 'Resources/Public/Icons/tx_germaniasacra_domain_model_klosterstandort.gif'
 	),

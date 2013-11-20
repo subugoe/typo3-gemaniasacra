@@ -105,6 +105,13 @@ class Kloster extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	protected $url;
 
 	/**
+	 * standort
+	 *
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Germaniasacra\Domain\Model\KlosterStandort>
+	 */
+	protected $standort;
+
+	/**
 	 * __construct
 	 *
 	 * @return Kloster
@@ -126,6 +133,8 @@ class Kloster extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 		 * You may modify the constructor of this class instead
 		 */
 		$this->url = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+		
+		$this->standort = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 	}
 
 	/**
@@ -336,6 +345,45 @@ class Kloster extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 */
 	public function setUrl(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $url) {
 		$this->url = $url;
+	}
+
+	/**
+	 * Adds a KlosterStandort
+	 *
+	 * @param \Subugoe\Germaniasacra\Domain\Model\KlosterStandort $standort
+	 * @return void
+	 */
+	public function addStandort(\Subugoe\Germaniasacra\Domain\Model\KlosterStandort $standort) {
+		$this->standort->attach($standort);
+	}
+
+	/**
+	 * Removes a KlosterStandort
+	 *
+	 * @param \Subugoe\Germaniasacra\Domain\Model\KlosterStandort $standortToRemove The KlosterStandort to be removed
+	 * @return void
+	 */
+	public function removeStandort(\Subugoe\Germaniasacra\Domain\Model\KlosterStandort $standortToRemove) {
+		$this->standort->detach($standortToRemove);
+	}
+
+	/**
+	 * Returns the standort
+	 *
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Germaniasacra\Domain\Model\KlosterStandort> $standort
+	 */
+	public function getStandort() {
+		return $this->standort;
+	}
+
+	/**
+	 * Sets the standort
+	 *
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Germaniasacra\Domain\Model\KlosterStandort> $standort
+	 * @return void
+	 */
+	public function setStandort(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $standort) {
+		$this->standort = $standort;
 	}
 
 }
