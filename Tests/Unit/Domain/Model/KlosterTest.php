@@ -229,12 +229,60 @@ class KlosterTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 	/**
 	 * @test
 	 */
-	public function getStandortReturnsInitialValueForKlosterStandort() { }
+	public function getStandortReturnsInitialValueForKlosterStandort() { 
+		$newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
+		$this->assertEquals(
+			$newObjectStorage,
+			$this->fixture->getStandort()
+		);
+	}
 
 	/**
 	 * @test
 	 */
-	public function setStandortForKlosterStandortSetsStandort() { }
+	public function setStandortForObjectStorageContainingKlosterStandortSetsStandort() { 
+		$standort = new \Subugoe\Germaniasacra\Domain\Model\KlosterStandort();
+		$objectStorageHoldingExactlyOneStandort = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
+		$objectStorageHoldingExactlyOneStandort->attach($standort);
+		$this->fixture->setStandort($objectStorageHoldingExactlyOneStandort);
+
+		$this->assertSame(
+			$objectStorageHoldingExactlyOneStandort,
+			$this->fixture->getStandort()
+		);
+	}
+	
+	/**
+	 * @test
+	 */
+	public function addStandortToObjectStorageHoldingStandort() {
+		$standort = new \Subugoe\Germaniasacra\Domain\Model\KlosterStandort();
+		$objectStorageHoldingExactlyOneStandort = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
+		$objectStorageHoldingExactlyOneStandort->attach($standort);
+		$this->fixture->addStandort($standort);
+
+		$this->assertEquals(
+			$objectStorageHoldingExactlyOneStandort,
+			$this->fixture->getStandort()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function removeStandortFromObjectStorageHoldingStandort() {
+		$standort = new \Subugoe\Germaniasacra\Domain\Model\KlosterStandort();
+		$localObjectStorage = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
+		$localObjectStorage->attach($standort);
+		$localObjectStorage->detach($standort);
+		$this->fixture->addStandort($standort);
+		$this->fixture->removeStandort($standort);
+
+		$this->assertEquals(
+			$localObjectStorage,
+			$this->fixture->getStandort()
+		);
+	}
 	
 	/**
 	 * @test

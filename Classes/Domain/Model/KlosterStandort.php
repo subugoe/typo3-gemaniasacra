@@ -84,6 +84,13 @@ class KlosterStandort extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObjec
 	protected $ort;
 
 	/**
+	 * zeitraum
+	 *
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Germaniasacra\Domain\Model\Zeitraum>
+	 */
+	protected $zeitraum;
+
+	/**
 	 * __construct
 	 *
 	 * @return KlosterStandort
@@ -105,6 +112,8 @@ class KlosterStandort extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObjec
 		 * You may modify the constructor of this class instead
 		 */
 		$this->ort = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+		
+		$this->zeitraum = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 	}
 
 	/**
@@ -258,6 +267,45 @@ class KlosterStandort extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObjec
 	 */
 	public function setOrt(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $ort) {
 		$this->ort = $ort;
+	}
+
+	/**
+	 * Adds a Zeitraum
+	 *
+	 * @param \Subugoe\Germaniasacra\Domain\Model\Zeitraum $zeitraum
+	 * @return void
+	 */
+	public function addZeitraum(\Subugoe\Germaniasacra\Domain\Model\Zeitraum $zeitraum) {
+		$this->zeitraum->attach($zeitraum);
+	}
+
+	/**
+	 * Removes a Zeitraum
+	 *
+	 * @param \Subugoe\Germaniasacra\Domain\Model\Zeitraum $zeitraumToRemove The Zeitraum to be removed
+	 * @return void
+	 */
+	public function removeZeitraum(\Subugoe\Germaniasacra\Domain\Model\Zeitraum $zeitraumToRemove) {
+		$this->zeitraum->detach($zeitraumToRemove);
+	}
+
+	/**
+	 * Returns the zeitraum
+	 *
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Germaniasacra\Domain\Model\Zeitraum> $zeitraum
+	 */
+	public function getZeitraum() {
+		return $this->zeitraum;
+	}
+
+	/**
+	 * Sets the zeitraum
+	 *
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Germaniasacra\Domain\Model\Zeitraum> $zeitraum
+	 * @return void
+	 */
+	public function setZeitraum(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $zeitraum) {
+		$this->zeitraum = $zeitraum;
 	}
 
 }

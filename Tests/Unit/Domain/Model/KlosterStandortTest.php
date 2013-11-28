@@ -221,5 +221,63 @@ class KlosterStandortTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 		);
 	}
 	
+	/**
+	 * @test
+	 */
+	public function getZeitraumReturnsInitialValueForZeitraum() { 
+		$newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
+		$this->assertEquals(
+			$newObjectStorage,
+			$this->fixture->getZeitraum()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setZeitraumForObjectStorageContainingZeitraumSetsZeitraum() { 
+		$zeitraum = new \Subugoe\Germaniasacra\Domain\Model\Zeitraum();
+		$objectStorageHoldingExactlyOneZeitraum = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
+		$objectStorageHoldingExactlyOneZeitraum->attach($zeitraum);
+		$this->fixture->setZeitraum($objectStorageHoldingExactlyOneZeitraum);
+
+		$this->assertSame(
+			$objectStorageHoldingExactlyOneZeitraum,
+			$this->fixture->getZeitraum()
+		);
+	}
+	
+	/**
+	 * @test
+	 */
+	public function addZeitraumToObjectStorageHoldingZeitraum() {
+		$zeitraum = new \Subugoe\Germaniasacra\Domain\Model\Zeitraum();
+		$objectStorageHoldingExactlyOneZeitraum = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
+		$objectStorageHoldingExactlyOneZeitraum->attach($zeitraum);
+		$this->fixture->addZeitraum($zeitraum);
+
+		$this->assertEquals(
+			$objectStorageHoldingExactlyOneZeitraum,
+			$this->fixture->getZeitraum()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function removeZeitraumFromObjectStorageHoldingZeitraum() {
+		$zeitraum = new \Subugoe\Germaniasacra\Domain\Model\Zeitraum();
+		$localObjectStorage = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
+		$localObjectStorage->attach($zeitraum);
+		$localObjectStorage->detach($zeitraum);
+		$this->fixture->addZeitraum($zeitraum);
+		$this->fixture->removeZeitraum($zeitraum);
+
+		$this->assertEquals(
+			$localObjectStorage,
+			$this->fixture->getZeitraum()
+		);
+	}
+	
 }
 ?>

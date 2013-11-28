@@ -122,28 +122,6 @@ class OrdenTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 	/**
 	 * @test
 	 */
-	public function getOrdenstypReturnsInitialValueForInteger() { 
-		$this->assertSame(
-			0,
-			$this->fixture->getOrdenstyp()
-		);
-	}
-
-	/**
-	 * @test
-	 */
-	public function setOrdenstypForIntegerSetsOrdenstyp() { 
-		$this->fixture->setOrdenstyp(12);
-
-		$this->assertSame(
-			12,
-			$this->fixture->getOrdenstyp()
-		);
-	}
-	
-	/**
-	 * @test
-	 */
 	public function getUrlReturnsInitialValueForUrl() { 
 		$newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
 		$this->assertEquals(
@@ -198,6 +176,16 @@ class OrdenTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 			$this->fixture->getUrl()
 		);
 	}
+	
+	/**
+	 * @test
+	 */
+	public function getOrdenstypReturnsInitialValueForOrdenstyp() { }
+
+	/**
+	 * @test
+	 */
+	public function setOrdenstypForOrdenstypSetsOrdenstyp() { }
 	
 }
 ?>

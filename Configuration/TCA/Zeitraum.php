@@ -147,6 +147,11 @@ $TCA['tx_germaniasacra_domain_model_zeitraum'] = array(
 				'eval' => 'trim'
 			),
 		),
+		'klosterstandort' => array(
+			'config' => array(
+				'type' => 'passthrough',
+			),
+		),
 	),
 );
 

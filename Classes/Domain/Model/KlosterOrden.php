@@ -42,13 +42,6 @@ class KlosterOrden extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObject {
 	protected $bemerkung;
 
 	/**
-	 * klosterstatus
-	 *
-	 * @var \string
-	 */
-	protected $klosterstatus;
-
-	/**
 	 * orden
 	 *
 	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Germaniasacra\Domain\Model\Orden>
@@ -58,9 +51,16 @@ class KlosterOrden extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObject {
 	/**
 	 * zeitraum
 	 *
-	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Germaniasacra\Domain\Model\Zeitraum>
+	 * @var \Subugoe\Germaniasacra\Domain\Model\Zeitraum
 	 */
 	protected $zeitraum;
+
+	/**
+	 * klosterstatus
+	 *
+	 * @var \Subugoe\Germaniasacra\Domain\Model\Klosterstatus
+	 */
+	protected $klosterstatus;
 
 	/**
 	 * __construct
@@ -84,8 +84,6 @@ class KlosterOrden extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObject {
 		 * You may modify the constructor of this class instead
 		 */
 		$this->orden = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
-		
-		$this->zeitraum = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 	}
 
 	/**
@@ -105,25 +103,6 @@ class KlosterOrden extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObject {
 	 */
 	public function setBemerkung($bemerkung) {
 		$this->bemerkung = $bemerkung;
-	}
-
-	/**
-	 * Returns the klosterstatus
-	 *
-	 * @return \string $klosterstatus
-	 */
-	public function getKlosterstatus() {
-		return $this->klosterstatus;
-	}
-
-	/**
-	 * Sets the klosterstatus
-	 *
-	 * @param \string $klosterstatus
-	 * @return void
-	 */
-	public function setKlosterstatus($klosterstatus) {
-		$this->klosterstatus = $klosterstatus;
 	}
 
 	/**
@@ -166,29 +145,9 @@ class KlosterOrden extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObject {
 	}
 
 	/**
-	 * Adds a Zeitraum
-	 *
-	 * @param \Subugoe\Germaniasacra\Domain\Model\Zeitraum $zeitraum
-	 * @return void
-	 */
-	public function addZeitraum(\Subugoe\Germaniasacra\Domain\Model\Zeitraum $zeitraum) {
-		$this->zeitraum->attach($zeitraum);
-	}
-
-	/**
-	 * Removes a Zeitraum
-	 *
-	 * @param \Subugoe\Germaniasacra\Domain\Model\Zeitraum $zeitraumToRemove The Zeitraum to be removed
-	 * @return void
-	 */
-	public function removeZeitraum(\Subugoe\Germaniasacra\Domain\Model\Zeitraum $zeitraumToRemove) {
-		$this->zeitraum->detach($zeitraumToRemove);
-	}
-
-	/**
 	 * Returns the zeitraum
 	 *
-	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Germaniasacra\Domain\Model\Zeitraum> $zeitraum
+	 * @return \Subugoe\Germaniasacra\Domain\Model\Zeitraum $zeitraum
 	 */
 	public function getZeitraum() {
 		return $this->zeitraum;
@@ -197,11 +156,30 @@ class KlosterOrden extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObject {
 	/**
 	 * Sets the zeitraum
 	 *
-	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Germaniasacra\Domain\Model\Zeitraum> $zeitraum
+	 * @param \Subugoe\Germaniasacra\Domain\Model\Zeitraum $zeitraum
 	 * @return void
 	 */
-	public function setZeitraum(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $zeitraum) {
+	public function setZeitraum(\Subugoe\Germaniasacra\Domain\Model\Zeitraum $zeitraum) {
 		$this->zeitraum = $zeitraum;
+	}
+
+	/**
+	 * Returns the klosterstatus
+	 *
+	 * @return \Subugoe\Germaniasacra\Domain\Model\Klosterstatus $klosterstatus
+	 */
+	public function getKlosterstatus() {
+		return $this->klosterstatus;
+	}
+
+	/**
+	 * Sets the klosterstatus
+	 *
+	 * @param \Subugoe\Germaniasacra\Domain\Model\Klosterstatus $klosterstatus
+	 * @return void
+	 */
+	public function setKlosterstatus(\Subugoe\Germaniasacra\Domain\Model\Klosterstatus $klosterstatus) {
+		$this->klosterstatus = $klosterstatus;
 	}
 
 }

@@ -6,10 +6,10 @@ if (!defined ('TYPO3_MODE')) {
 $TCA['tx_germaniasacra_domain_model_orden'] = array(
 	'ctrl' => $TCA['tx_germaniasacra_domain_model_orden']['ctrl'],
 	'interface' => array(
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, orden, ordo, symbol, graphik, ordenstyp, url',
+		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, orden, ordo, symbol, graphik, url, ordenstyp',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, orden, ordo, symbol, graphik, ordenstyp, url,--div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access,starttime, endtime'),
+		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, orden, ordo, symbol, graphik, url, ordenstyp,--div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access,starttime, endtime'),
 	),
 	'palettes' => array(
 		'1' => array('showitem' => ''),
@@ -129,19 +129,6 @@ $TCA['tx_germaniasacra_domain_model_orden'] = array(
 				'eval' => 'trim'
 			),
 		),
-		'ordenstyp' => array(
-			'exclude' => 0,
-			'label' => 'LLL:EXT:germaniasacra/Resources/Private/Language/locallang_db.xlf:tx_germaniasacra_domain_model_orden.ordenstyp',
-			'config' => array(
-				'type' => 'select',
-				'items' => array(
-					array('-- Label --', 0),
-				),
-				'size' => 1,
-				'maxitems' => 1,
-				'eval' => ''
-			),
-		),
 		'url' => array(
 			'exclude' => 0,
 			'label' => 'LLL:EXT:germaniasacra/Resources/Private/Language/locallang_db.xlf:tx_germaniasacra_domain_model_orden.url',
@@ -176,6 +163,16 @@ $TCA['tx_germaniasacra_domain_model_orden'] = array(
 						'script' => 'wizard_add.php',
 					),
 				),
+			),
+		),
+		'ordenstyp' => array(
+			'exclude' => 0,
+			'label' => 'LLL:EXT:germaniasacra/Resources/Private/Language/locallang_db.xlf:tx_germaniasacra_domain_model_orden.ordenstyp',
+			'config' => array(
+				'type' => 'select',
+				'foreign_table' => 'tx_germaniasacra_domain_model_ordenstyp',
+				'minitems' => 0,
+				'maxitems' => 1,
 			),
 		),
 	),

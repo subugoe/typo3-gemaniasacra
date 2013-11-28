@@ -6,10 +6,10 @@ if (!defined ('TYPO3_MODE')) {
 $TCA['tx_germaniasacra_domain_model_klosterstandort'] = array(
 	'ctrl' => $TCA['tx_germaniasacra_domain_model_klosterstandort']['ctrl'],
 	'interface' => array(
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, gruender, bemerkung, breite, laenge, bemerkung_standort, temp_literatur_alt, ort',
+		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, gruender, bemerkung, breite, laenge, bemerkung_standort, temp_literatur_alt, ort, zeitraum',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, gruender, bemerkung, breite, laenge, bemerkung_standort, temp_literatur_alt, ort,--div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access,starttime, endtime'),
+		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, gruender, bemerkung, breite, laenge, bemerkung_standort, temp_literatur_alt, ort, zeitraum,--div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access,starttime, endtime'),
 	),
 	'palettes' => array(
 		'1' => array('showitem' => ''),
@@ -184,6 +184,28 @@ $TCA['tx_germaniasacra_domain_model_klosterstandort'] = array(
 						'script' => 'wizard_add.php',
 					),
 				),
+			),
+		),
+		'zeitraum' => array(
+			'exclude' => 0,
+			'label' => 'LLL:EXT:germaniasacra/Resources/Private/Language/locallang_db.xlf:tx_germaniasacra_domain_model_klosterstandort.zeitraum',
+			'config' => array(
+				'type' => 'inline',
+				'foreign_table' => 'tx_germaniasacra_domain_model_zeitraum',
+				'foreign_field' => 'klosterstandort',
+				'maxitems'      => 9999,
+				'appearance' => array(
+					'collapseAll' => 0,
+					'levelLinksPosition' => 'top',
+					'showSynchronizationLink' => 1,
+					'showPossibleLocalizationRecords' => 1,
+					'showAllLocalizationLink' => 1
+				),
+			),
+		),
+		'kloster' => array(
+			'config' => array(
+				'type' => 'passthrough',
 			),
 		),
 	),

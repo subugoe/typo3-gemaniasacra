@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2013-11-28T14:36:56Z" product-name="germaniasacra">
+	<file source-language="en" datatype="plaintext" original="messages" date="2013-11-28T14:56:53Z" product-name="germaniasacra">
 		<header/>
 		<body>
 
@@ -19,11 +19,11 @@
 			<trans-unit id="tx_germaniasacra_domain_model_orden.graphik">
 				<source>graphik</source>
 			</trans-unit>
-			<trans-unit id="tx_germaniasacra_domain_model_orden.ordenstyp">
-				<source>ordenstyp</source>
-			</trans-unit>
 			<trans-unit id="tx_germaniasacra_domain_model_orden.url">
 				<source>url</source>
+			</trans-unit>
+			<trans-unit id="tx_germaniasacra_domain_model_orden.ordenstyp">
+				<source>ordenstyp</source>
 			</trans-unit>
 			
 			<trans-unit id="tx_germaniasacra_domain_model_land">
@@ -182,14 +182,14 @@
 			<trans-unit id="tx_germaniasacra_domain_model_klosterorden.bemerkung">
 				<source>bemerkung</source>
 			</trans-unit>
-			<trans-unit id="tx_germaniasacra_domain_model_klosterorden.klosterstatus">
-				<source>klosterstatus</source>
-			</trans-unit>
 			<trans-unit id="tx_germaniasacra_domain_model_klosterorden.orden">
 				<source>orden</source>
 			</trans-unit>
 			<trans-unit id="tx_germaniasacra_domain_model_klosterorden.zeitraum">
 				<source>zeitraum</source>
+			</trans-unit>
+			<trans-unit id="tx_germaniasacra_domain_model_klosterorden.klosterstatus">
+				<source>klosterstatus</source>
 			</trans-unit>
 			
 			<trans-unit id="tx_germaniasacra_domain_model_url">
@@ -229,6 +229,9 @@
 			<trans-unit id="tx_germaniasacra_domain_model_klosterstandort.ort">
 				<source>ort</source>
 			</trans-unit>
+			<trans-unit id="tx_germaniasacra_domain_model_klosterstandort.zeitraum">
+				<source>zeitraum</source>
+			</trans-unit>
 			
 			<trans-unit id="tx_germaniasacra_domain_model_bearbeitungsstatus">
 				<source>Bearbeitungsstatus</source>
@@ -242,6 +245,20 @@
 			</trans-unit>
 			<trans-unit id="tx_germaniasacra_domain_model_personallistenstatus.name">
 				<source>name</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_germaniasacra_domain_model_ordenstyp">
+				<source>Ordenstyp</source>
+			</trans-unit>
+			<trans-unit id="tx_germaniasacra_domain_model_ordenstyp.ordenstyp">
+				<source>ordenstyp</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_germaniasacra_domain_model_klosterstatus">
+				<source>Klosterstatus</source>
+			</trans-unit>
+			<trans-unit id="tx_germaniasacra_domain_model_klosterstatus.status">
+				<source>status</source>
 			</trans-unit>
 			
 		</body>

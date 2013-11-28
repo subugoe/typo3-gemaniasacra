@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2013-11-28T14:36:56Z" product-name="germaniasacra">
+	<file source-language="en" datatype="plaintext" original="messages" date="2013-11-28T14:56:53Z" product-name="germaniasacra">
 		<header/>
 		<body>
 
@@ -16,11 +16,11 @@
 			<trans-unit id="graphik.description">
 				<source>graphik</source>
 			</trans-unit>
-			<trans-unit id="ordenstyp.description">
-				<source>ordenstyp</source>
-			</trans-unit>
 			<trans-unit id="url.description">
 				<source>url</source>
+			</trans-unit>
+			<trans-unit id="ordenstyp.description">
+				<source>ordenstyp</source>
 			</trans-unit>
 		</body>
 	</file>

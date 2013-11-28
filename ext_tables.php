@@ -34,7 +34,7 @@ $TCA['tx_germaniasacra_domain_model_orden'] = array(
 			'starttime' => 'starttime',
 			'endtime' => 'endtime',
 		),
-		'searchFields' => 'orden,ordo,symbol,graphik,ordenstyp,url,',
+		'searchFields' => 'orden,ordo,symbol,graphik,url,ordenstyp,',
 		'dynamicConfigFile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'Configuration/TCA/Orden.php',
 		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY) . 'Resources/Public/Icons/tx_germaniasacra_domain_model_orden.gif'
 	),
@@ -237,7 +237,7 @@ $TCA['tx_germaniasacra_domain_model_klosterorden'] = array(
 			'starttime' => 'starttime',
 			'endtime' => 'endtime',
 		),
-		'searchFields' => 'bemerkung,klosterstatus,orden,zeitraum,',
+		'searchFields' => 'bemerkung,orden,zeitraum,klosterstatus,',
 		'dynamicConfigFile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'Configuration/TCA/KlosterOrden.php',
 		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY) . 'Resources/Public/Icons/tx_germaniasacra_domain_model_klosterorden.gif'
 	),
@@ -295,7 +295,7 @@ $TCA['tx_germaniasacra_domain_model_klosterstandort'] = array(
 			'starttime' => 'starttime',
 			'endtime' => 'endtime',
 		),
-		'searchFields' => 'gruender,bemerkung,breite,laenge,bemerkung_standort,temp_literatur_alt,ort,',
+		'searchFields' => 'gruender,bemerkung,breite,laenge,bemerkung_standort,temp_literatur_alt,ort,zeitraum,',
 		'dynamicConfigFile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'Configuration/TCA/KlosterStandort.php',
 		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY) . 'Resources/Public/Icons/tx_germaniasacra_domain_model_klosterstandort.gif'
 	),
@@ -356,6 +356,64 @@ $TCA['tx_germaniasacra_domain_model_personallistenstatus'] = array(
 		'searchFields' => 'name,',
 		'dynamicConfigFile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'Configuration/TCA/Personallistenstatus.php',
 		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY) . 'Resources/Public/Icons/tx_germaniasacra_domain_model_personallistenstatus.gif'
+	),
+);
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_germaniasacra_domain_model_ordenstyp', 'EXT:germaniasacra/Resources/Private/Language/locallang_csh_tx_germaniasacra_domain_model_ordenstyp.xlf');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_germaniasacra_domain_model_ordenstyp');
+$TCA['tx_germaniasacra_domain_model_ordenstyp'] = array(
+	'ctrl' => array(
+		'title'	=> 'LLL:EXT:germaniasacra/Resources/Private/Language/locallang_db.xlf:tx_germaniasacra_domain_model_ordenstyp',
+		'label' => 'ordenstyp',
+		'tstamp' => 'tstamp',
+		'crdate' => 'crdate',
+		'cruser_id' => 'cruser_id',
+		'dividers2tabs' => TRUE,
+
+		'versioningWS' => 2,
+		'versioning_followPages' => TRUE,
+		'origUid' => 't3_origuid',
+		'languageField' => 'sys_language_uid',
+		'transOrigPointerField' => 'l10n_parent',
+		'transOrigDiffSourceField' => 'l10n_diffsource',
+		'delete' => 'deleted',
+		'enablecolumns' => array(
+			'disabled' => 'hidden',
+			'starttime' => 'starttime',
+			'endtime' => 'endtime',
+		),
+		'searchFields' => 'ordenstyp,',
+		'dynamicConfigFile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'Configuration/TCA/Ordenstyp.php',
+		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY) . 'Resources/Public/Icons/tx_germaniasacra_domain_model_ordenstyp.gif'
+	),
+);
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_germaniasacra_domain_model_klosterstatus', 'EXT:germaniasacra/Resources/Private/Language/locallang_csh_tx_germaniasacra_domain_model_klosterstatus.xlf');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_germaniasacra_domain_model_klosterstatus');
+$TCA['tx_germaniasacra_domain_model_klosterstatus'] = array(
+	'ctrl' => array(
+		'title'	=> 'LLL:EXT:germaniasacra/Resources/Private/Language/locallang_db.xlf:tx_germaniasacra_domain_model_klosterstatus',
+		'label' => 'status',
+		'tstamp' => 'tstamp',
+		'crdate' => 'crdate',
+		'cruser_id' => 'cruser_id',
+		'dividers2tabs' => TRUE,
+
+		'versioningWS' => 2,
+		'versioning_followPages' => TRUE,
+		'origUid' => 't3_origuid',
+		'languageField' => 'sys_language_uid',
+		'transOrigPointerField' => 'l10n_parent',
+		'transOrigDiffSourceField' => 'l10n_diffsource',
+		'delete' => 'deleted',
+		'enablecolumns' => array(
+			'disabled' => 'hidden',
+			'starttime' => 'starttime',
+			'endtime' => 'endtime',
+		),
+		'searchFields' => 'status,',
+		'dynamicConfigFile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'Configuration/TCA/Klosterstatus.php',
+		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY) . 'Resources/Public/Icons/tx_germaniasacra_domain_model_klosterstatus.gif'
 	),
 );
 

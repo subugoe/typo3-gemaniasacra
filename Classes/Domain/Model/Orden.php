@@ -63,18 +63,18 @@ class Orden extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	protected $graphik;
 
 	/**
-	 * ordenstyp
-	 *
-	 * @var \integer
-	 */
-	protected $ordenstyp;
-
-	/**
 	 * url
 	 *
 	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Germaniasacra\Domain\Model\Url>
 	 */
 	protected $url;
+
+	/**
+	 * ordenstyp
+	 *
+	 * @var \Subugoe\Germaniasacra\Domain\Model\Ordenstyp
+	 */
+	protected $ordenstyp;
 
 	/**
 	 * __construct
@@ -177,25 +177,6 @@ class Orden extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
-	 * Returns the ordenstyp
-	 *
-	 * @return \integer $ordenstyp
-	 */
-	public function getOrdenstyp() {
-		return $this->ordenstyp;
-	}
-
-	/**
-	 * Sets the ordenstyp
-	 *
-	 * @param \integer $ordenstyp
-	 * @return void
-	 */
-	public function setOrdenstyp($ordenstyp) {
-		$this->ordenstyp = $ordenstyp;
-	}
-
-	/**
 	 * Adds a Url
 	 *
 	 * @param \Subugoe\Germaniasacra\Domain\Model\Url $url
@@ -232,6 +213,25 @@ class Orden extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 */
 	public function setUrl(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $url) {
 		$this->url = $url;
+	}
+
+	/**
+	 * Returns the ordenstyp
+	 *
+	 * @return \Subugoe\Germaniasacra\Domain\Model\Ordenstyp $ordenstyp
+	 */
+	public function getOrdenstyp() {
+		return $this->ordenstyp;
+	}
+
+	/**
+	 * Sets the ordenstyp
+	 *
+	 * @param \Subugoe\Germaniasacra\Domain\Model\Ordenstyp $ordenstyp
+	 * @return void
+	 */
+	public function setOrdenstyp(\Subugoe\Germaniasacra\Domain\Model\Ordenstyp $ordenstyp) {
+		$this->ordenstyp = $ordenstyp;
 	}
 
 }
