@@ -4,8 +4,11 @@
 		<header/>
 		<body>
 
-			<trans-unit id="status.description">
-				<source>status</source>
+			<trans-unit id="citekey.description">
+				<source>citekey</source>
+			</trans-unit>
+			<trans-unit id="beschreibung.description">
+				<source>beschreibung</source>
 			</trans-unit>
 		</body>
 	</file>

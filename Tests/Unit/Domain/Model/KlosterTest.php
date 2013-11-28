@@ -362,5 +362,63 @@ class KlosterTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 		);
 	}
 	
+	/**
+	 * @test
+	 */
+	public function getLiteraturReturnsInitialValueForLiteratur() { 
+		$newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
+		$this->assertEquals(
+			$newObjectStorage,
+			$this->fixture->getLiteratur()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setLiteraturForObjectStorageContainingLiteraturSetsLiteratur() { 
+		$literatur = new \Subugoe\Germaniasacra\Domain\Model\Literatur();
+		$objectStorageHoldingExactlyOneLiteratur = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
+		$objectStorageHoldingExactlyOneLiteratur->attach($literatur);
+		$this->fixture->setLiteratur($objectStorageHoldingExactlyOneLiteratur);
+
+		$this->assertSame(
+			$objectStorageHoldingExactlyOneLiteratur,
+			$this->fixture->getLiteratur()
+		);
+	}
+	
+	/**
+	 * @test
+	 */
+	public function addLiteraturToObjectStorageHoldingLiteratur() {
+		$literatur = new \Subugoe\Germaniasacra\Domain\Model\Literatur();
+		$objectStorageHoldingExactlyOneLiteratur = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
+		$objectStorageHoldingExactlyOneLiteratur->attach($literatur);
+		$this->fixture->addLiteratur($literatur);
+
+		$this->assertEquals(
+			$objectStorageHoldingExactlyOneLiteratur,
+			$this->fixture->getLiteratur()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function removeLiteraturFromObjectStorageHoldingLiteratur() {
+		$literatur = new \Subugoe\Germaniasacra\Domain\Model\Literatur();
+		$localObjectStorage = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
+		$localObjectStorage->attach($literatur);
+		$localObjectStorage->detach($literatur);
+		$this->fixture->addLiteratur($literatur);
+		$this->fixture->removeLiteratur($literatur);
+
+		$this->assertEquals(
+			$localObjectStorage,
+			$this->fixture->getLiteratur()
+		);
+	}
+	
 }
 ?>

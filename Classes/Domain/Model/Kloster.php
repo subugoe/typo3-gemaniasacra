@@ -119,6 +119,13 @@ class Kloster extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	protected $orden;
 
 	/**
+	 * literatur
+	 *
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Germaniasacra\Domain\Model\Literatur>
+	 */
+	protected $literatur;
+
+	/**
 	 * __construct
 	 *
 	 * @return Kloster
@@ -144,6 +151,8 @@ class Kloster extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 		$this->standort = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 		
 		$this->orden = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+		
+		$this->literatur = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 	}
 
 	/**
@@ -432,6 +441,45 @@ class Kloster extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 */
 	public function setOrden(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $orden) {
 		$this->orden = $orden;
+	}
+
+	/**
+	 * Adds a Literatur
+	 *
+	 * @param \Subugoe\Germaniasacra\Domain\Model\Literatur $literatur
+	 * @return void
+	 */
+	public function addLiteratur(\Subugoe\Germaniasacra\Domain\Model\Literatur $literatur) {
+		$this->literatur->attach($literatur);
+	}
+
+	/**
+	 * Removes a Literatur
+	 *
+	 * @param \Subugoe\Germaniasacra\Domain\Model\Literatur $literaturToRemove The Literatur to be removed
+	 * @return void
+	 */
+	public function removeLiteratur(\Subugoe\Germaniasacra\Domain\Model\Literatur $literaturToRemove) {
+		$this->literatur->detach($literaturToRemove);
+	}
+
+	/**
+	 * Returns the literatur
+	 *
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Germaniasacra\Domain\Model\Literatur> $literatur
+	 */
+	public function getLiteratur() {
+		return $this->literatur;
+	}
+
+	/**
+	 * Sets the literatur
+	 *
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Germaniasacra\Domain\Model\Literatur> $literatur
+	 * @return void
+	 */
+	public function setLiteratur(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $literatur) {
+		$this->literatur = $literatur;
 	}
 
 }

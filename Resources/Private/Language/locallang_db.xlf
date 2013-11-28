@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2013-11-28T15:13:37Z" product-name="germaniasacra">
+	<file source-language="en" datatype="plaintext" original="messages" date="2013-11-28T15:42:23Z" product-name="germaniasacra">
 		<header/>
 		<body>
 
@@ -153,6 +153,9 @@
 			<trans-unit id="tx_germaniasacra_domain_model_kloster.orden">
 				<source>Orden</source>
 			</trans-unit>
+			<trans-unit id="tx_germaniasacra_domain_model_kloster.literatur">
+				<source>Literatur</source>
+			</trans-unit>
 
 			<trans-unit id="tx_germaniasacra_domain_model_zeitraum">
 				<source>Zeitraum</source>
@@ -266,6 +269,16 @@
 			</trans-unit>
 			<trans-unit id="tx_germaniasacra_domain_model_urltyp.name">
 				<source>Name</source>
+			</trans-unit>
+
+			<trans-unit id="tx_germaniasacra_domain_model_literatur">
+				<source>Literatur</source>
+			</trans-unit>
+			<trans-unit id="tx_germaniasacra_domain_model_literatur.citekey">
+				<source>Citekey</source>
+			</trans-unit>
+			<trans-unit id="tx_germaniasacra_domain_model_literatur.beschreibung">
+				<source>Beschreibung</source>
 			</trans-unit>
 
 		</body>

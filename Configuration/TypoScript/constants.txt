@@ -1,14 +1,14 @@
-plugin.tx_germaniasacra {
+module.tx_germaniasacra {
 	view {
-		# cat=plugin.tx_germaniasacra/file; type=string; label=Path to template root (FE)
-		templateRootPath = EXT:germaniasacra/Resources/Private/Templates/
-		# cat=plugin.tx_germaniasacra/file; type=string; label=Path to template partials (FE)
-		partialRootPath = EXT:germaniasacra/Resources/Private/Partials/
-		# cat=plugin.tx_germaniasacra/file; type=string; label=Path to template layouts (FE)
-		layoutRootPath = EXT:germaniasacra/Resources/Private/Layouts/
+		# cat=module.tx_germaniasacra/file; type=string; label=Path to template root (BE)
+		templateRootPath = EXT:germaniasacra/Resources/Private/Backend/Templates/
+		# cat=module.tx_germaniasacra/file; type=string; label=Path to template partials (BE)
+		partialRootPath = EXT:germaniasacra/Resources/Private/Backend/Partials/
+		# cat=module.tx_germaniasacra/file; type=string; label=Path to template layouts (BE)
+		layoutRootPath = EXT:germaniasacra/Resources/Private/Backend/Layouts/
 	}
 	persistence {
-		# cat=plugin.tx_germaniasacra//a; type=string; label=Default storage PID
+		# cat=module.tx_germaniasacra//a; type=string; label=Default storage PID
 		storagePid =
 	}
 }
