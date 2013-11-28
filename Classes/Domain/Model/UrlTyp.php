@@ -32,84 +32,32 @@ namespace Subugoe\Germaniasacra\Domain\Model;
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
  */
-class Url extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
+class UrlTyp extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
 	/**
-	 * url
+	 * name
 	 *
 	 * @var \string
 	 */
-	protected $url;
+	protected $name;
 
 	/**
-	 * bemerkung
+	 * Returns the name
 	 *
-	 * @var \string
+	 * @return \string $name
 	 */
-	protected $bemerkung;
-
-	/**
-	 * urltyp
-	 *
-	 * @var \Subugoe\Germaniasacra\Domain\Model\UrlTyp
-	 */
-	protected $urltyp;
-
-	/**
-	 * Returns the url
-	 *
-	 * @return \string $url
-	 */
-	public function getUrl() {
-		return $this->url;
+	public function getName() {
+		return $this->name;
 	}
 
 	/**
-	 * Sets the url
+	 * Sets the name
 	 *
-	 * @param \string $url
+	 * @param \string $name
 	 * @return void
 	 */
-	public function setUrl($url) {
-		$this->url = $url;
-	}
-
-	/**
-	 * Returns the bemerkung
-	 *
-	 * @return \string $bemerkung
-	 */
-	public function getBemerkung() {
-		return $this->bemerkung;
-	}
-
-	/**
-	 * Sets the bemerkung
-	 *
-	 * @param \string $bemerkung
-	 * @return void
-	 */
-	public function setBemerkung($bemerkung) {
-		$this->bemerkung = $bemerkung;
-	}
-
-	/**
-	 * Returns the urltyp
-	 *
-	 * @return \Subugoe\Germaniasacra\Domain\Model\UrlTyp $urltyp
-	 */
-	public function getUrltyp() {
-		return $this->urltyp;
-	}
-
-	/**
-	 * Sets the urltyp
-	 *
-	 * @param \Subugoe\Germaniasacra\Domain\Model\UrlTyp $urltyp
-	 * @return void
-	 */
-	public function setUrltyp(\Subugoe\Germaniasacra\Domain\Model\UrlTyp $urltyp) {
-		$this->urltyp = $urltyp;
+	public function setName($name) {
+		$this->name = $name;
 	}
 
 }

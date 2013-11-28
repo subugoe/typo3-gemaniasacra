@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2013-11-28T14:56:53Z" product-name="germaniasacra">
+	<file source-language="en" datatype="plaintext" original="messages" date="2013-11-28T15:13:37Z" product-name="germaniasacra">
 		<header/>
 		<body>
 
@@ -201,8 +201,8 @@
 			<trans-unit id="tx_germaniasacra_domain_model_url.bemerkung">
 				<source>Bemerkung</source>
 			</trans-unit>
-			<trans-unit id="tx_germaniasacra_domain_model_url.typ">
-				<source>Typ</source>
+			<trans-unit id="tx_germaniasacra_domain_model_url.urltyp">
+				<source>Urltyp</source>
 			</trans-unit>
 
 			<trans-unit id="tx_germaniasacra_domain_model_klosterstandort">
@@ -259,6 +259,13 @@
 			</trans-unit>
 			<trans-unit id="tx_germaniasacra_domain_model_klosterstatus.status">
 				<source>Status</source>
+			</trans-unit>
+
+			<trans-unit id="tx_germaniasacra_domain_model_urltyp">
+				<source>Url Typ</source>
+			</trans-unit>
+			<trans-unit id="tx_germaniasacra_domain_model_urltyp.name">
+				<source>Name</source>
 			</trans-unit>
 
 		</body>

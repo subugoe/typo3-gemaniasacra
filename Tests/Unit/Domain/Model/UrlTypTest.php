@@ -26,7 +26,7 @@ namespace Subugoe\Germaniasacra\Tests;
  ***************************************************************/
 
 /**
- * Test case for class \Subugoe\Germaniasacra\Domain\Model\Url.
+ * Test case for class \Subugoe\Germaniasacra\Domain\Model\UrlTyp.
  *
  * @version $Id$
  * @copyright Copyright belongs to the respective authors
@@ -37,14 +37,14 @@ namespace Subugoe\Germaniasacra\Tests;
  *
  * @author Ingo Pfennigstorf <pfennigstorf@sub.uni-goettingen.de>
  */
-class UrlTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
+class UrlTypTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 	/**
-	 * @var \Subugoe\Germaniasacra\Domain\Model\Url
+	 * @var \Subugoe\Germaniasacra\Domain\Model\UrlTyp
 	 */
 	protected $fixture;
 
 	public function setUp() {
-		$this->fixture = new \Subugoe\Germaniasacra\Domain\Model\Url();
+		$this->fixture = new \Subugoe\Germaniasacra\Domain\Model\UrlTyp();
 	}
 
 	public function tearDown() {
@@ -54,46 +54,19 @@ class UrlTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 	/**
 	 * @test
 	 */
-	public function getUrlReturnsInitialValueForString() { }
+	public function getNameReturnsInitialValueForString() { }
 
 	/**
 	 * @test
 	 */
-	public function setUrlForStringSetsUrl() { 
-		$this->fixture->setUrl('Conceived at T3CON10');
-
-		$this->assertSame(
-			'Conceived at T3CON10',
-			$this->fixture->getUrl()
-		);
-	}
-	
-	/**
-	 * @test
-	 */
-	public function getBemerkungReturnsInitialValueForString() { }
-
-	/**
-	 * @test
-	 */
-	public function setBemerkungForStringSetsBemerkung() { 
-		$this->fixture->setBemerkung('Conceived at T3CON10');
+	public function setNameForStringSetsName() { 
+		$this->fixture->setName('Conceived at T3CON10');
 
 		$this->assertSame(
 			'Conceived at T3CON10',
-			$this->fixture->getBemerkung()
+			$this->fixture->getName()
 		);
 	}
-	
-	/**
-	 * @test
-	 */
-	public function getUrltypReturnsInitialValueForUrlTyp() { }
-
-	/**
-	 * @test
-	 */
-	public function setUrltypForUrlTypSetsUrltyp() { }
 	
 }
 ?>

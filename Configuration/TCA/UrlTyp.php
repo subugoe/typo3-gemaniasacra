@@ -3,13 +3,13 @@ if (!defined ('TYPO3_MODE')) {
 	die ('Access denied.');
 }
 
-$TCA['tx_germaniasacra_domain_model_url'] = array(
-	'ctrl' => $TCA['tx_germaniasacra_domain_model_url']['ctrl'],
+$TCA['tx_germaniasacra_domain_model_urltyp'] = array(
+	'ctrl' => $TCA['tx_germaniasacra_domain_model_urltyp']['ctrl'],
 	'interface' => array(
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, url, bemerkung, urltyp',
+		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, url, bemerkung, urltyp,--div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access,starttime, endtime'),
+		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, name,--div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access,starttime, endtime'),
 	),
 	'palettes' => array(
 		'1' => array('showitem' => ''),
@@ -37,8 +37,8 @@ $TCA['tx_germaniasacra_domain_model_url'] = array(
 				'items' => array(
 					array('', 0),
 				),
-				'foreign_table' => 'tx_germaniasacra_domain_model_url',
-				'foreign_table_where' => 'AND tx_germaniasacra_domain_model_url.pid=###CURRENT_PID### AND tx_germaniasacra_domain_model_url.sys_language_uid IN (-1,0)',
+				'foreign_table' => 'tx_germaniasacra_domain_model_urltyp',
+				'foreign_table_where' => 'AND tx_germaniasacra_domain_model_urltyp.pid=###CURRENT_PID### AND tx_germaniasacra_domain_model_urltyp.sys_language_uid IN (-1,0)',
 			),
 		),
 		'l10n_diffsource' => array(
@@ -93,33 +93,13 @@ $TCA['tx_germaniasacra_domain_model_url'] = array(
 				),
 			),
 		),
-		'url' => array(
+		'name' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:germaniasacra/Resources/Private/Language/locallang_db.xlf:tx_germaniasacra_domain_model_url.url',
+			'label' => 'LLL:EXT:germaniasacra/Resources/Private/Language/locallang_db.xlf:tx_germaniasacra_domain_model_urltyp.name',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
 				'eval' => 'trim'
-			),
-		),
-		'bemerkung' => array(
-			'exclude' => 0,
-			'label' => 'LLL:EXT:germaniasacra/Resources/Private/Language/locallang_db.xlf:tx_germaniasacra_domain_model_url.bemerkung',
-			'config' => array(
-				'type' => 'text',
-				'cols' => 40,
-				'rows' => 15,
-				'eval' => 'trim'
-			),
-		),
-		'urltyp' => array(
-			'exclude' => 0,
-			'label' => 'LLL:EXT:germaniasacra/Resources/Private/Language/locallang_db.xlf:tx_germaniasacra_domain_model_url.urltyp',
-			'config' => array(
-				'type' => 'select',
-				'foreign_table' => 'tx_germaniasacra_domain_model_urltyp',
-				'minitems' => 0,
-				'maxitems' => 1,
 			),
 		),
 	),
