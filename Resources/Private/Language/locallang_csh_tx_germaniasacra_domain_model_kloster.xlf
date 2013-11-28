@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2013-11-20T15:23:07Z" product-name="germaniasacra">
+	<file source-language="en" datatype="plaintext" original="messages" date="2013-11-28T14:36:56Z" product-name="germaniasacra">
 		<header/>
 		<body>
 
@@ -22,12 +22,6 @@
 			<trans-unit id="text_gs_band.description">
 				<source>textGsBand</source>
 			</trans-unit>
-			<trans-unit id="bearbeitungsstatus.description">
-				<source>bearbeitungsstatus</source>
-			</trans-unit>
-			<trans-unit id="personallistenstatus.description">
-				<source>personallistenstatus</source>
-			</trans-unit>
 			<trans-unit id="band.description">
 				<source>band</source>
 			</trans-unit>
@@ -36,6 +30,15 @@
 			</trans-unit>
 			<trans-unit id="standort.description">
 				<source>standort</source>
+			</trans-unit>
+			<trans-unit id="bearbeitungsstatus.description">
+				<source>bearbeitungsstatus</source>
+			</trans-unit>
+			<trans-unit id="personallistenstatus.description">
+				<source>personallistenstatus</source>
+			</trans-unit>
+			<trans-unit id="orden.description">
+				<source>orden</source>
 			</trans-unit>
 		</body>
 	</file>

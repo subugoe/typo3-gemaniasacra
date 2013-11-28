@@ -88,64 +88,6 @@ class KlosterOrdenTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 	/**
 	 * @test
 	 */
-	public function getKlosterReturnsInitialValueForKloster() { 
-		$newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
-		$this->assertEquals(
-			$newObjectStorage,
-			$this->fixture->getKloster()
-		);
-	}
-
-	/**
-	 * @test
-	 */
-	public function setKlosterForObjectStorageContainingKlosterSetsKloster() { 
-		$kloster = new \Subugoe\Germaniasacra\Domain\Model\Kloster();
-		$objectStorageHoldingExactlyOneKloster = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
-		$objectStorageHoldingExactlyOneKloster->attach($kloster);
-		$this->fixture->setKloster($objectStorageHoldingExactlyOneKloster);
-
-		$this->assertSame(
-			$objectStorageHoldingExactlyOneKloster,
-			$this->fixture->getKloster()
-		);
-	}
-	
-	/**
-	 * @test
-	 */
-	public function addKlosterToObjectStorageHoldingKloster() {
-		$kloster = new \Subugoe\Germaniasacra\Domain\Model\Kloster();
-		$objectStorageHoldingExactlyOneKloster = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
-		$objectStorageHoldingExactlyOneKloster->attach($kloster);
-		$this->fixture->addKloster($kloster);
-
-		$this->assertEquals(
-			$objectStorageHoldingExactlyOneKloster,
-			$this->fixture->getKloster()
-		);
-	}
-
-	/**
-	 * @test
-	 */
-	public function removeKlosterFromObjectStorageHoldingKloster() {
-		$kloster = new \Subugoe\Germaniasacra\Domain\Model\Kloster();
-		$localObjectStorage = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
-		$localObjectStorage->attach($kloster);
-		$localObjectStorage->detach($kloster);
-		$this->fixture->addKloster($kloster);
-		$this->fixture->removeKloster($kloster);
-
-		$this->assertEquals(
-			$localObjectStorage,
-			$this->fixture->getKloster()
-		);
-	}
-	
-	/**
-	 * @test
-	 */
 	public function getOrdenReturnsInitialValueForOrden() { 
 		$newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
 		$this->assertEquals(

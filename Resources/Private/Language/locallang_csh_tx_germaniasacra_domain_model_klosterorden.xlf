@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2013-11-20T15:23:07Z" product-name="germaniasacra">
+	<file source-language="en" datatype="plaintext" original="messages" date="2013-11-28T14:36:56Z" product-name="germaniasacra">
 		<header/>
 		<body>
 
@@ -9,9 +9,6 @@
 			</trans-unit>
 			<trans-unit id="klosterstatus.description">
 				<source>klosterstatus</source>
-			</trans-unit>
-			<trans-unit id="kloster.description">
-				<source>kloster</source>
 			</trans-unit>
 			<trans-unit id="orden.description">
 				<source>orden</source>

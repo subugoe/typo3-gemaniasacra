@@ -161,50 +161,6 @@ class KlosterTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 	/**
 	 * @test
 	 */
-	public function getBearbeitungsstatusReturnsInitialValueForInteger() { 
-		$this->assertSame(
-			0,
-			$this->fixture->getBearbeitungsstatus()
-		);
-	}
-
-	/**
-	 * @test
-	 */
-	public function setBearbeitungsstatusForIntegerSetsBearbeitungsstatus() { 
-		$this->fixture->setBearbeitungsstatus(12);
-
-		$this->assertSame(
-			12,
-			$this->fixture->getBearbeitungsstatus()
-		);
-	}
-	
-	/**
-	 * @test
-	 */
-	public function getPersonallistenstatusReturnsInitialValueForInteger() { 
-		$this->assertSame(
-			0,
-			$this->fixture->getPersonallistenstatus()
-		);
-	}
-
-	/**
-	 * @test
-	 */
-	public function setPersonallistenstatusForIntegerSetsPersonallistenstatus() { 
-		$this->fixture->setPersonallistenstatus(12);
-
-		$this->assertSame(
-			12,
-			$this->fixture->getPersonallistenstatus()
-		);
-	}
-	
-	/**
-	 * @test
-	 */
 	public function getBandReturnsInitialValueForBand() { }
 
 	/**
@@ -273,58 +229,88 @@ class KlosterTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 	/**
 	 * @test
 	 */
-	public function getStandortReturnsInitialValueForKlosterStandort() { 
+	public function getStandortReturnsInitialValueForKlosterStandort() { }
+
+	/**
+	 * @test
+	 */
+	public function setStandortForKlosterStandortSetsStandort() { }
+	
+	/**
+	 * @test
+	 */
+	public function getBearbeitungsstatusReturnsInitialValueForBearbeitungsstatus() { }
+
+	/**
+	 * @test
+	 */
+	public function setBearbeitungsstatusForBearbeitungsstatusSetsBearbeitungsstatus() { }
+	
+	/**
+	 * @test
+	 */
+	public function getPersonallistenstatusReturnsInitialValueForPersonallistenstatus() { }
+
+	/**
+	 * @test
+	 */
+	public function setPersonallistenstatusForPersonallistenstatusSetsPersonallistenstatus() { }
+	
+	/**
+	 * @test
+	 */
+	public function getOrdenReturnsInitialValueForKlosterOrden() { 
 		$newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
 		$this->assertEquals(
 			$newObjectStorage,
-			$this->fixture->getStandort()
+			$this->fixture->getOrden()
 		);
 	}
 
 	/**
 	 * @test
 	 */
-	public function setStandortForObjectStorageContainingKlosterStandortSetsStandort() { 
-		$standort = new \Subugoe\Germaniasacra\Domain\Model\KlosterStandort();
-		$objectStorageHoldingExactlyOneStandort = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
-		$objectStorageHoldingExactlyOneStandort->attach($standort);
-		$this->fixture->setStandort($objectStorageHoldingExactlyOneStandort);
+	public function setOrdenForObjectStorageContainingKlosterOrdenSetsOrden() { 
+		$orden = new \Subugoe\Germaniasacra\Domain\Model\KlosterOrden();
+		$objectStorageHoldingExactlyOneOrden = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
+		$objectStorageHoldingExactlyOneOrden->attach($orden);
+		$this->fixture->setOrden($objectStorageHoldingExactlyOneOrden);
 
 		$this->assertSame(
-			$objectStorageHoldingExactlyOneStandort,
-			$this->fixture->getStandort()
+			$objectStorageHoldingExactlyOneOrden,
+			$this->fixture->getOrden()
 		);
 	}
 	
 	/**
 	 * @test
 	 */
-	public function addStandortToObjectStorageHoldingStandort() {
-		$standort = new \Subugoe\Germaniasacra\Domain\Model\KlosterStandort();
-		$objectStorageHoldingExactlyOneStandort = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
-		$objectStorageHoldingExactlyOneStandort->attach($standort);
-		$this->fixture->addStandort($standort);
+	public function addOrdenToObjectStorageHoldingOrden() {
+		$orden = new \Subugoe\Germaniasacra\Domain\Model\KlosterOrden();
+		$objectStorageHoldingExactlyOneOrden = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
+		$objectStorageHoldingExactlyOneOrden->attach($orden);
+		$this->fixture->addOrden($orden);
 
 		$this->assertEquals(
-			$objectStorageHoldingExactlyOneStandort,
-			$this->fixture->getStandort()
+			$objectStorageHoldingExactlyOneOrden,
+			$this->fixture->getOrden()
 		);
 	}
 
 	/**
 	 * @test
 	 */
-	public function removeStandortFromObjectStorageHoldingStandort() {
-		$standort = new \Subugoe\Germaniasacra\Domain\Model\KlosterStandort();
+	public function removeOrdenFromObjectStorageHoldingOrden() {
+		$orden = new \Subugoe\Germaniasacra\Domain\Model\KlosterOrden();
 		$localObjectStorage = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
-		$localObjectStorage->attach($standort);
-		$localObjectStorage->detach($standort);
-		$this->fixture->addStandort($standort);
-		$this->fixture->removeStandort($standort);
+		$localObjectStorage->attach($orden);
+		$localObjectStorage->detach($orden);
+		$this->fixture->addOrden($orden);
+		$this->fixture->removeOrden($orden);
 
 		$this->assertEquals(
 			$localObjectStorage,
-			$this->fixture->getStandort()
+			$this->fixture->getOrden()
 		);
 	}
 	

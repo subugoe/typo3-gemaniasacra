@@ -15,7 +15,6 @@ $TCA['tx_germaniasacra_domain_model_bearbeitungsstatus'] = array(
 		'1' => array('showitem' => ''),
 	),
 	'columns' => array(
-	
 		'sys_language_uid' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.language',
@@ -47,7 +46,6 @@ $TCA['tx_germaniasacra_domain_model_bearbeitungsstatus'] = array(
 				'type' => 'passthrough',
 			),
 		),
-
 		't3ver_label' => array(
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.versionLabel',
 			'config' => array(
@@ -56,7 +54,6 @@ $TCA['tx_germaniasacra_domain_model_bearbeitungsstatus'] = array(
 				'max' => 255,
 			)
 		),
-	
 		'hidden' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.hidden',

@@ -187,5 +187,63 @@ class BistumTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 		);
 	}
 	
+	/**
+	 * @test
+	 */
+	public function getOrtReturnsInitialValueForOrt() { 
+		$newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
+		$this->assertEquals(
+			$newObjectStorage,
+			$this->fixture->getOrt()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setOrtForObjectStorageContainingOrtSetsOrt() { 
+		$ort = new \Subugoe\Germaniasacra\Domain\Model\Ort();
+		$objectStorageHoldingExactlyOneOrt = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
+		$objectStorageHoldingExactlyOneOrt->attach($ort);
+		$this->fixture->setOrt($objectStorageHoldingExactlyOneOrt);
+
+		$this->assertSame(
+			$objectStorageHoldingExactlyOneOrt,
+			$this->fixture->getOrt()
+		);
+	}
+	
+	/**
+	 * @test
+	 */
+	public function addOrtToObjectStorageHoldingOrt() {
+		$ort = new \Subugoe\Germaniasacra\Domain\Model\Ort();
+		$objectStorageHoldingExactlyOneOrt = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
+		$objectStorageHoldingExactlyOneOrt->attach($ort);
+		$this->fixture->addOrt($ort);
+
+		$this->assertEquals(
+			$objectStorageHoldingExactlyOneOrt,
+			$this->fixture->getOrt()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function removeOrtFromObjectStorageHoldingOrt() {
+		$ort = new \Subugoe\Germaniasacra\Domain\Model\Ort();
+		$localObjectStorage = new \TYPO3\CMS\Extbase\Persistence\Generic\ObjectStorage();
+		$localObjectStorage->attach($ort);
+		$localObjectStorage->detach($ort);
+		$this->fixture->addOrt($ort);
+		$this->fixture->removeOrt($ort);
+
+		$this->assertEquals(
+			$localObjectStorage,
+			$this->fixture->getOrt()
+		);
+	}
+	
 }
 ?>

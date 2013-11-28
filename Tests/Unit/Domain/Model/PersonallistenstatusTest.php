@@ -32,6 +32,9 @@ namespace Subugoe\Germaniasacra\Tests;
  * @copyright Copyright belongs to the respective authors
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
+ * @package TYPO3
+ * @subpackage Germania Sacra
+ *
  * @author Ingo Pfennigstorf <pfennigstorf@sub.uni-goettingen.de>
  */
 class PersonallistenstatusTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
@@ -51,17 +54,12 @@ class PersonallistenstatusTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCas
 	/**
 	 * @test
 	 */
-	public function getNameReturnsInitialValueForString() {
-		$this->assertSame(
-			NULL,
-			$this->fixture->getName()
-		);
-	}
+	public function getNameReturnsInitialValueForString() { }
 
 	/**
 	 * @test
 	 */
-	public function setNameForStringSetsName() {
+	public function setNameForStringSetsName() { 
 		$this->fixture->setName('Conceived at T3CON10');
 
 		$this->assertSame(
@@ -69,5 +67,6 @@ class PersonallistenstatusTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCas
 			$this->fixture->getName()
 		);
 	}
+	
 }
 ?>

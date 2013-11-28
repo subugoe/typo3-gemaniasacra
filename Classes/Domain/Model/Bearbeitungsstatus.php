@@ -28,10 +28,11 @@ namespace Subugoe\Germaniasacra\Domain\Model;
 /**
  *
  *
+ * @package germaniasacra
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
  */
-class Bearbeitungsstatus extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
+class Bearbeitungsstatus extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObject {
 
 	/**
 	 * name

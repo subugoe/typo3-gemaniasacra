@@ -77,20 +77,6 @@ class Kloster extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	protected $textGsBand;
 
 	/**
-	 * bearbeitungsstatus
-	 *
-	 * @var \integer
-	 */
-	protected $bearbeitungsstatus;
-
-	/**
-	 * personallistenstatus
-	 *
-	 * @var \integer
-	 */
-	protected $personallistenstatus;
-
-	/**
 	 * band
 	 *
 	 * @var \Subugoe\Germaniasacra\Domain\Model\Band
@@ -107,9 +93,30 @@ class Kloster extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * standort
 	 *
-	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Germaniasacra\Domain\Model\KlosterStandort>
+	 * @var \Subugoe\Germaniasacra\Domain\Model\KlosterStandort
 	 */
 	protected $standort;
+
+	/**
+	 * bearbeitungsstatus
+	 *
+	 * @var \Subugoe\Germaniasacra\Domain\Model\Bearbeitungsstatus
+	 */
+	protected $bearbeitungsstatus;
+
+	/**
+	 * personallistenstatus
+	 *
+	 * @var \Subugoe\Germaniasacra\Domain\Model\Personallistenstatus
+	 */
+	protected $personallistenstatus;
+
+	/**
+	 * orden
+	 *
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Germaniasacra\Domain\Model\KlosterOrden>
+	 */
+	protected $orden;
 
 	/**
 	 * __construct
@@ -134,7 +141,7 @@ class Kloster extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 		 */
 		$this->url = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 		
-		$this->standort = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+		$this->orden = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 	}
 
 	/**
@@ -252,44 +259,6 @@ class Kloster extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
-	 * Returns the bearbeitungsstatus
-	 *
-	 * @return \integer $bearbeitungsstatus
-	 */
-	public function getBearbeitungsstatus() {
-		return $this->bearbeitungsstatus;
-	}
-
-	/**
-	 * Sets the bearbeitungsstatus
-	 *
-	 * @param \integer $bearbeitungsstatus
-	 * @return void
-	 */
-	public function setBearbeitungsstatus($bearbeitungsstatus) {
-		$this->bearbeitungsstatus = $bearbeitungsstatus;
-	}
-
-	/**
-	 * Returns the personallistenstatus
-	 *
-	 * @return \integer $personallistenstatus
-	 */
-	public function getPersonallistenstatus() {
-		return $this->personallistenstatus;
-	}
-
-	/**
-	 * Sets the personallistenstatus
-	 *
-	 * @param \integer $personallistenstatus
-	 * @return void
-	 */
-	public function setPersonallistenstatus($personallistenstatus) {
-		$this->personallistenstatus = $personallistenstatus;
-	}
-
-	/**
 	 * Returns the band
 	 *
 	 * @return \Subugoe\Germaniasacra\Domain\Model\Band $band
@@ -348,29 +317,9 @@ class Kloster extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
-	 * Adds a KlosterStandort
-	 *
-	 * @param \Subugoe\Germaniasacra\Domain\Model\KlosterStandort $standort
-	 * @return void
-	 */
-	public function addStandort(\Subugoe\Germaniasacra\Domain\Model\KlosterStandort $standort) {
-		$this->standort->attach($standort);
-	}
-
-	/**
-	 * Removes a KlosterStandort
-	 *
-	 * @param \Subugoe\Germaniasacra\Domain\Model\KlosterStandort $standortToRemove The KlosterStandort to be removed
-	 * @return void
-	 */
-	public function removeStandort(\Subugoe\Germaniasacra\Domain\Model\KlosterStandort $standortToRemove) {
-		$this->standort->detach($standortToRemove);
-	}
-
-	/**
 	 * Returns the standort
 	 *
-	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Germaniasacra\Domain\Model\KlosterStandort> $standort
+	 * @return \Subugoe\Germaniasacra\Domain\Model\KlosterStandort $standort
 	 */
 	public function getStandort() {
 		return $this->standort;
@@ -379,11 +328,88 @@ class Kloster extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * Sets the standort
 	 *
-	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Germaniasacra\Domain\Model\KlosterStandort> $standort
+	 * @param \Subugoe\Germaniasacra\Domain\Model\KlosterStandort $standort
 	 * @return void
 	 */
-	public function setStandort(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $standort) {
+	public function setStandort(\Subugoe\Germaniasacra\Domain\Model\KlosterStandort $standort) {
 		$this->standort = $standort;
+	}
+
+	/**
+	 * Returns the bearbeitungsstatus
+	 *
+	 * @return \Subugoe\Germaniasacra\Domain\Model\Bearbeitungsstatus $bearbeitungsstatus
+	 */
+	public function getBearbeitungsstatus() {
+		return $this->bearbeitungsstatus;
+	}
+
+	/**
+	 * Sets the bearbeitungsstatus
+	 *
+	 * @param \Subugoe\Germaniasacra\Domain\Model\Bearbeitungsstatus $bearbeitungsstatus
+	 * @return void
+	 */
+	public function setBearbeitungsstatus(\Subugoe\Germaniasacra\Domain\Model\Bearbeitungsstatus $bearbeitungsstatus) {
+		$this->bearbeitungsstatus = $bearbeitungsstatus;
+	}
+
+	/**
+	 * Returns the personallistenstatus
+	 *
+	 * @return \Subugoe\Germaniasacra\Domain\Model\Personallistenstatus $personallistenstatus
+	 */
+	public function getPersonallistenstatus() {
+		return $this->personallistenstatus;
+	}
+
+	/**
+	 * Sets the personallistenstatus
+	 *
+	 * @param \Subugoe\Germaniasacra\Domain\Model\Personallistenstatus $personallistenstatus
+	 * @return void
+	 */
+	public function setPersonallistenstatus(\Subugoe\Germaniasacra\Domain\Model\Personallistenstatus $personallistenstatus) {
+		$this->personallistenstatus = $personallistenstatus;
+	}
+
+	/**
+	 * Adds a KlosterOrden
+	 *
+	 * @param \Subugoe\Germaniasacra\Domain\Model\KlosterOrden $orden
+	 * @return void
+	 */
+	public function addOrden(\Subugoe\Germaniasacra\Domain\Model\KlosterOrden $orden) {
+		$this->orden->attach($orden);
+	}
+
+	/**
+	 * Removes a KlosterOrden
+	 *
+	 * @param \Subugoe\Germaniasacra\Domain\Model\KlosterOrden $ordenToRemove The KlosterOrden to be removed
+	 * @return void
+	 */
+	public function removeOrden(\Subugoe\Germaniasacra\Domain\Model\KlosterOrden $ordenToRemove) {
+		$this->orden->detach($ordenToRemove);
+	}
+
+	/**
+	 * Returns the orden
+	 *
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Germaniasacra\Domain\Model\KlosterOrden> $orden
+	 */
+	public function getOrden() {
+		return $this->orden;
+	}
+
+	/**
+	 * Sets the orden
+	 *
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Germaniasacra\Domain\Model\KlosterOrden> $orden
+	 * @return void
+	 */
+	public function setOrden(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $orden) {
+		$this->orden = $orden;
 	}
 
 }

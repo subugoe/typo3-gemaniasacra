@@ -77,6 +77,13 @@ class Bistum extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	protected $url;
 
 	/**
+	 * ort
+	 *
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Germaniasacra\Domain\Model\Ort>
+	 */
+	protected $ort;
+
+	/**
 	 * __construct
 	 *
 	 * @return Bistum
@@ -98,6 +105,8 @@ class Bistum extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 		 * You may modify the constructor of this class instead
 		 */
 		$this->url = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+		
+		$this->ort = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 	}
 
 	/**
@@ -241,6 +250,45 @@ class Bistum extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 */
 	public function setUrl(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $url) {
 		$this->url = $url;
+	}
+
+	/**
+	 * Adds a Ort
+	 *
+	 * @param \Subugoe\Germaniasacra\Domain\Model\Ort $ort
+	 * @return void
+	 */
+	public function addOrt(\Subugoe\Germaniasacra\Domain\Model\Ort $ort) {
+		$this->ort->attach($ort);
+	}
+
+	/**
+	 * Removes a Ort
+	 *
+	 * @param \Subugoe\Germaniasacra\Domain\Model\Ort $ortToRemove The Ort to be removed
+	 * @return void
+	 */
+	public function removeOrt(\Subugoe\Germaniasacra\Domain\Model\Ort $ortToRemove) {
+		$this->ort->detach($ortToRemove);
+	}
+
+	/**
+	 * Returns the ort
+	 *
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Germaniasacra\Domain\Model\Ort> $ort
+	 */
+	public function getOrt() {
+		return $this->ort;
+	}
+
+	/**
+	 * Sets the ort
+	 *
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Germaniasacra\Domain\Model\Ort> $ort
+	 * @return void
+	 */
+	public function setOrt(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $ort) {
+		$this->ort = $ort;
 	}
 
 }

@@ -49,13 +49,6 @@ class KlosterOrden extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObject {
 	protected $klosterstatus;
 
 	/**
-	 * kloster
-	 *
-	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Germaniasacra\Domain\Model\Kloster>
-	 */
-	protected $kloster;
-
-	/**
 	 * orden
 	 *
 	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Germaniasacra\Domain\Model\Orden>
@@ -90,8 +83,6 @@ class KlosterOrden extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObject {
 		 * It will be rewritten on each save in the extension builder
 		 * You may modify the constructor of this class instead
 		 */
-		$this->kloster = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
-		
 		$this->orden = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 		
 		$this->zeitraum = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
@@ -133,45 +124,6 @@ class KlosterOrden extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObject {
 	 */
 	public function setKlosterstatus($klosterstatus) {
 		$this->klosterstatus = $klosterstatus;
-	}
-
-	/**
-	 * Adds a Kloster
-	 *
-	 * @param \Subugoe\Germaniasacra\Domain\Model\Kloster $kloster
-	 * @return void
-	 */
-	public function addKloster(\Subugoe\Germaniasacra\Domain\Model\Kloster $kloster) {
-		$this->kloster->attach($kloster);
-	}
-
-	/**
-	 * Removes a Kloster
-	 *
-	 * @param \Subugoe\Germaniasacra\Domain\Model\Kloster $klosterToRemove The Kloster to be removed
-	 * @return void
-	 */
-	public function removeKloster(\Subugoe\Germaniasacra\Domain\Model\Kloster $klosterToRemove) {
-		$this->kloster->detach($klosterToRemove);
-	}
-
-	/**
-	 * Returns the kloster
-	 *
-	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Germaniasacra\Domain\Model\Kloster> $kloster
-	 */
-	public function getKloster() {
-		return $this->kloster;
-	}
-
-	/**
-	 * Sets the kloster
-	 *
-	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Germaniasacra\Domain\Model\Kloster> $kloster
-	 * @return void
-	 */
-	public function setKloster(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $kloster) {
-		$this->kloster = $kloster;
 	}
 
 	/**
