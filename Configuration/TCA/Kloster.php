@@ -9,7 +9,7 @@ $TCA['tx_germaniasacra_domain_model_kloster'] = array(
 		'showRecordFieldList' => 'hidden, kloster, kloster_id, patrozinium, bemerkung, band_seite, text_gs_band, band, url, standort, bearbeitungsstatus, personallistenstatus, orden, literatur',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'kloster, kloster_id, patrozinium, bemerkung,  standort, bearbeitungsstatus, personallistenstatus, orden,--div--;Band, band_seite, text_gs_band, band,--div--;Verweise,url, literatur,--div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access,hidden;;1,starttime, endtime'),
+		'1' => array('showitem' => 'kloster, kloster_id, patrozinium, bemerkung,  standort, orden,--div--;Band, band_seite, text_gs_band, band,--div--;Verweise,url, literatur,--div--;Status,bearbeitungsstatus, personallistenstatus,--div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access,hidden;;1,starttime, endtime'),
 	),
 	'palettes' => array(
 		'1' => array('showitem' => ''),
