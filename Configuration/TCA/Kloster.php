@@ -6,10 +6,10 @@ if (!defined ('TYPO3_MODE')) {
 $TCA['tx_germaniasacra_domain_model_kloster'] = array(
 	'ctrl' => $TCA['tx_germaniasacra_domain_model_kloster']['ctrl'],
 	'interface' => array(
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, kloster, kloster_id, patrozinium, bemerkung, band_seite, text_gs_band, band, url, standort, bearbeitungsstatus, personallistenstatus, orden, literatur',
+		'showRecordFieldList' => 'hidden, kloster, kloster_id, patrozinium, bemerkung, band_seite, text_gs_band, band, url, standort, bearbeitungsstatus, personallistenstatus, orden, literatur',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, kloster, kloster_id, patrozinium, bemerkung, band_seite, text_gs_band, band, url, standort, bearbeitungsstatus, personallistenstatus, orden, literatur,--div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access,starttime, endtime'),
+		'1' => array('showitem' => 'kloster, kloster_id, patrozinium, bemerkung,  standort, bearbeitungsstatus, personallistenstatus, orden,--div--;Band, band_seite, text_gs_band, band,--div--;Verweise,url, literatur,--div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access,hidden;;1,starttime, endtime'),
 	),
 	'palettes' => array(
 		'1' => array('showitem' => ''),
