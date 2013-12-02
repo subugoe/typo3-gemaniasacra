@@ -1,5 +1,5 @@
 <?php
-if (!defined ('TYPO3_MODE')) {
+if (!defined('TYPO3_MODE')) {
 	die ('Access denied.');
 }
 
@@ -164,6 +164,9 @@ $TCA['tx_germaniasacra_domain_model_klosterstandort'] = array(
 				'wizards' => array(
 					'_PADDING' => 1,
 					'_VERTICAL' => 1,
+					'suggest' => array(
+						'type' => 'suggest',
+					),
 					'edit' => array(
 						'type' => 'popup',
 						'title' => 'Edit',
@@ -171,7 +174,7 @@ $TCA['tx_germaniasacra_domain_model_klosterstandort'] = array(
 						'icon' => 'edit2.gif',
 						'popup_onlyOpenIfSelected' => 1,
 						'JSopenParams' => 'height=350,width=580,status=0,menubar=0,scrollbars=1',
-						),
+					),
 					'add' => Array(
 						'type' => 'script',
 						'title' => 'Create new',
@@ -180,7 +183,7 @@ $TCA['tx_germaniasacra_domain_model_klosterstandort'] = array(
 							'table' => 'tx_germaniasacra_domain_model_ort',
 							'pid' => '###CURRENT_PID###',
 							'setValue' => 'prepend'
-							),
+						),
 						'script' => 'wizard_add.php',
 					),
 				),
@@ -193,7 +196,7 @@ $TCA['tx_germaniasacra_domain_model_klosterstandort'] = array(
 				'type' => 'inline',
 				'foreign_table' => 'tx_germaniasacra_domain_model_zeitraum',
 				'foreign_field' => 'klosterstandort',
-				'maxitems'      => 9999,
+				'maxitems' => 9999,
 				'appearance' => array(
 					'collapseAll' => 0,
 					'levelLinksPosition' => 'top',

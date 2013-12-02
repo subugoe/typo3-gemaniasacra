@@ -206,7 +206,7 @@ $TCA['tx_germaniasacra_domain_model_kloster'] = array(
 				'appearance' => array(
 					'collapseAll' => 0,
 					'levelLinksPosition' => 'top',
-					'showSynchronizationLink' => 1,
+					'showSynchronizationLink' => TRUE,
 					'showPossibleLocalizationRecords' => 1,
 					'showAllLocalizationLink' => 1
 				),
@@ -241,7 +241,7 @@ $TCA['tx_germaniasacra_domain_model_kloster'] = array(
 				'foreign_field' => 'kloster',
 				'maxitems'      => 9999,
 				'appearance' => array(
-					'collapseAll' => 0,
+					'collapseAll' => TRUE,
 					'levelLinksPosition' => 'top',
 					'showSynchronizationLink' => 1,
 					'showPossibleLocalizationRecords' => 1,
